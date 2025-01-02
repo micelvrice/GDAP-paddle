@@ -1868,7 +1868,8 @@ class LlamaModel(LlamaPretrainedModel):
         recover_hidden_states = paddle.zeros([orig_seq_len, hidden_states.shape[-1]]).to(hidden_states.place)
         recover_hidden_states.scatter_(paddle.to_tensor(remove_token_indices_list), remove_token_states.squeeze(0))
         recover_hidden_states.scatter_(paddle.to_tensor(keep_token_indices_list), hidden_states)
-
+        
+        hidden_states = recover_hidden_states
         if self.config.use_last_token_for_generation:
             hidden_states = paddle.unsqueeze(hidden_states[:, -1, :], 1)
 
