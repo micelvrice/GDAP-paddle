@@ -1,0 +1,590 @@
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:686: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/_distutils_hack/__init__.py:31: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+[2024-12-30 11:14:19,999] [    INFO] distributed_strategy.py:333 - distributed strategy initialized
+======================= Modified FLAGS detected =======================
+FLAGS(name='FLAGS_enable_pir_in_executor', current_value=True, default_value=False)
+FLAGS(name='FLAGS_nvidia_package_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia', default_value='')
+FLAGS(name='FLAGS_cublas_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cublas/lib', default_value='')
+FLAGS(name='FLAGS_cusolver_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusolver/lib', default_value='')
+FLAGS(name='FLAGS_cupti_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cuda_cupti/lib', default_value='')
+FLAGS(name='FLAGS_cudnn_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cudnn/lib', default_value='')
+FLAGS(name='FLAGS_curand_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/curand/lib', default_value='')
+FLAGS(name='FLAGS_nccl_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/nccl/lib', default_value='')
+FLAGS(name='FLAGS_cusparse_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusparse/lib', default_value='')
+FLAGS(name='FLAGS_selected_gpus', current_value='6', default_value='')
+=======================================================================
+I1230 11:14:20.000888 4019306 tcp_utils.cc:130] Successfully connected to 10.3.242.26:48565
+I1230 11:14:20.027576 4019306 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:14:20.027606 4019306 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:14:20,028] [    INFO] topology.py:370 - Total 8 pipe comm group(s) create successfully!
+W1230 11:14:20.033471 4019306 gpu_resources.cc:119] Please NOTE: device: 6, GPU Compute Capability: 8.0, Driver API Version: 12.2, Runtime API Version: 11.7
+W1230 11:14:20.038475 4019306 gpu_resources.cc:164] device: 6, cuDNN Version: 8.9.
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/distributed/communication/group.py:128: UserWarning: Current global rank 6 is not in group _default_pg16
+  warnings.warn(
+[2024-12-30 11:14:25,206] [    INFO] topology.py:370 - Total 8 data comm group(s) create successfully!
+[2024-12-30 11:14:25,206] [    INFO] topology.py:370 - Total 8 model comm group(s) create successfully!
+I1230 11:14:25.207101 4019306 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:14:25.207126 4019306 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:14:25,207] [    INFO] topology.py:370 - Total 1 sharding comm group(s) create successfully!
+I1230 11:14:25.207211 4019306 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:14:25.207214 4019306 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:14:25,207] [    INFO] topology.py:290 - HybridParallelInfo: rank_id: 6, mp_degree: 1, sharding_degree: 8, pp_degree: 1, dp_degree: 1, sep_degree: 1, mp_group: [6],  sharding_group: [0, 1, 2, 3, 4, 5, 6, 7], pp_group: [6], dp_group: [6], sep:group: None, check/clip group: [0, 1, 2, 3, 4, 5, 6, 7]
+[32m[2024-12-30 11:14:25,207] [    INFO][0m -     +==============================================================================+
+    |                                                                              |
+    |                         DistributedStrategy Overview                         |
+    |                                                                              |
+    +==============================================================================+
+    |                        a_sync=True <-> a_sync_configs                        |
+    +------------------------------------------------------------------------------+
+    |                               k_steps                    -1                  |
+    |                     max_merge_var_num                    1                   |
+    |                       send_queue_size                    16                  |
+    |               independent_recv_thread                  False                 |
+    |         min_send_grad_num_before_recv                    1                   |
+    |                      thread_pool_size                    1                   |
+    |                       send_wait_times                    1                   |
+    |               runtime_split_send_recv                  False                 |
+    |                        launch_barrier                   True                 |
+    |             heter_worker_device_guard                   cpu                  |
+    |                        lr_decay_steps                    10                  |
+    |                            use_ps_gpu                    0                   |
+    |                         use_gpu_graph                    0                   |
+    +==============================================================================+
+    |                    Environment Flags, Communication Flags                    |
+    +------------------------------------------------------------------------------+
+    |                                  mode                    1                   |
+    |                               elastic                  False                 |
+    |                                  auto                  False                 |
+    |                   sync_nccl_allreduce                   True                 |
+    |                         nccl_comm_num                    1                   |
+    |            use_hierarchical_allreduce                  False                 |
+    |   hierarchical_allreduce_inter_nranks                    1                   |
+    |                       sync_batch_norm                  False                 |
+    |                   fuse_all_reduce_ops                   True                 |
+    |                  fuse_grad_size_in_MB                    32                  |
+    |              fuse_grad_size_in_TFLOPS                   50.0                 |
+    |               cudnn_exhaustive_search                  False                 |
+    |             conv_workspace_size_limit                   512                  |
+    |    cudnn_batchnorm_spatial_persistent                  False                 |
+    |                        fp16_allreduce                  False                 |
+    |               last_comm_group_size_MB                   1.0                  |
+    |                find_unused_parameters                  False                 |
+    |            without_graph_optimization                   True                 |
+    |                 fuse_grad_size_in_num                    8                   |
+    |                 calc_comm_same_stream                  False                 |
+    |                                   asp                  False                 |
+    |                       fuse_grad_merge                  False                 |
+    |                             semi_auto                  False                 |
+    |                            adam_d2sum                  False                 |
+    |                           auto_search                  False                 |
+    |                        heter_ccl_mode                  False                 |
+    |                         is_fl_ps_mode                  False                 |
+    |                      with_coordinator                  False                 |
+    |                            split_data                   True                 |
+    |                  downpour_table_param                    []                  |
+    |                       fs_client_param                                        |
+    +==============================================================================+
+    |                                Build Strategy                                |
+    +------------------------------------------------------------------------------+
+    |              fuse_elewise_add_act_ops                  False                 |
+    |                       fuse_bn_act_ops                  False                 |
+    |              fuse_relu_depthwise_conv                  False                 |
+    |                    fuse_broadcast_ops                  False                 |
+    |                fuse_all_optimizer_ops                  False                 |
+    |                        enable_inplace                  False                 |
+    |     enable_backward_optimizer_op_deps                   True                 |
+    |                 cache_runtime_context                  False                 |
+    |                   fuse_bn_add_act_ops                   True                 |
+    |                    enable_auto_fusion                  False                 |
+    |                          enable_addto                  False                 |
+    |              allow_cuda_graph_capture                  False                 |
+    |                       reduce_strategy                    0                   |
+    |                    fuse_gemm_epilogue                  False                 |
+    |                   debug_graphviz_path                                        |
+    |                       fused_attention                  False                 |
+    |                     fused_feedforward                  False                 |
+    |            fuse_dot_product_attention                  False                 |
+    |                          fuse_resunit                  False                 |
+    +==============================================================================+
+[0m
+[32m[2024-12-30 11:14:25,207] [    INFO][0m - The default value for the training argument `--report_to` will change in v5 (from all installed integrations to none). In v5, you will need to use `--report_to all` to get the same behavior as now. You should start updating your code and make this info disappear :-).[0m
+Traceback (most recent call last):
+  File "/home/sjx/tr-paddle-1230/llm/run_finetune.py", line 679, in <module>
+    main()
+  File "/home/sjx/tr-paddle-1230/llm/run_finetune.py", line 96, in main
+    gen_args, model_args, reft_args, data_args, training_args = parser.parse_json_file_and_cmd_lines()
+  File "/home/sjx/tr-paddle-1230/paddlenlp/trainer/argparser.py", line 299, in parse_json_file_and_cmd_lines
+    return self.common_parse(args, return_remaining_strings)
+  File "/home/sjx/tr-paddle-1230/paddlenlp/trainer/argparser.py", line 252, in common_parse
+    raise ValueError(f"Some specified arguments are not used by the PdArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the PdArgumentParser: ['--rope_scaling_type', 'linear']
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:686: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/_distutils_hack/__init__.py:31: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+[2024-12-30 11:19:31,960] [    INFO] distributed_strategy.py:333 - distributed strategy initialized
+======================= Modified FLAGS detected =======================
+FLAGS(name='FLAGS_cusolver_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusolver/lib', default_value='')
+FLAGS(name='FLAGS_nvidia_package_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia', default_value='')
+FLAGS(name='FLAGS_enable_pir_in_executor', current_value=True, default_value=False)
+FLAGS(name='FLAGS_cupti_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cuda_cupti/lib', default_value='')
+FLAGS(name='FLAGS_cudnn_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cudnn/lib', default_value='')
+FLAGS(name='FLAGS_selected_gpus', current_value='6', default_value='')
+FLAGS(name='FLAGS_curand_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/curand/lib', default_value='')
+FLAGS(name='FLAGS_cusparse_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusparse/lib', default_value='')
+FLAGS(name='FLAGS_nccl_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/nccl/lib', default_value='')
+FLAGS(name='FLAGS_cublas_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cublas/lib', default_value='')
+=======================================================================
+I1230 11:19:31.961431 4023011 tcp_utils.cc:107] Retry to connect to 10.3.242.26:38255 while the server is not yet listening.
+I1230 11:19:34.961733 4023011 tcp_utils.cc:130] Successfully connected to 10.3.242.26:38255
+I1230 11:19:34.967476 4023011 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:19:34.967499 4023011 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:19:34,968] [    INFO] topology.py:370 - Total 8 pipe comm group(s) create successfully!
+W1230 11:19:34.968664 4023011 gpu_resources.cc:119] Please NOTE: device: 6, GPU Compute Capability: 8.0, Driver API Version: 12.2, Runtime API Version: 11.7
+W1230 11:19:34.969615 4023011 gpu_resources.cc:164] device: 6, cuDNN Version: 8.9.
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/distributed/communication/group.py:128: UserWarning: Current global rank 6 is not in group _default_pg16
+  warnings.warn(
+[2024-12-30 11:19:38,647] [    INFO] topology.py:370 - Total 8 data comm group(s) create successfully!
+[2024-12-30 11:19:38,648] [    INFO] topology.py:370 - Total 8 model comm group(s) create successfully!
+I1230 11:19:38.648178 4023011 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:19:38.648195 4023011 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:19:38,648] [    INFO] topology.py:370 - Total 1 sharding comm group(s) create successfully!
+I1230 11:19:38.648267 4023011 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:19:38.648270 4023011 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:19:38,648] [    INFO] topology.py:290 - HybridParallelInfo: rank_id: 6, mp_degree: 1, sharding_degree: 8, pp_degree: 1, dp_degree: 1, sep_degree: 1, mp_group: [6],  sharding_group: [0, 1, 2, 3, 4, 5, 6, 7], pp_group: [6], dp_group: [6], sep:group: None, check/clip group: [0, 1, 2, 3, 4, 5, 6, 7]
+[32m[2024-12-30 11:19:38,648] [    INFO][0m -     +==============================================================================+
+    |                                                                              |
+    |                         DistributedStrategy Overview                         |
+    |                                                                              |
+    +==============================================================================+
+    |                        a_sync=True <-> a_sync_configs                        |
+    +------------------------------------------------------------------------------+
+    |                               k_steps                    -1                  |
+    |                     max_merge_var_num                    1                   |
+    |                       send_queue_size                    16                  |
+    |               independent_recv_thread                  False                 |
+    |         min_send_grad_num_before_recv                    1                   |
+    |                      thread_pool_size                    1                   |
+    |                       send_wait_times                    1                   |
+    |               runtime_split_send_recv                  False                 |
+    |                        launch_barrier                   True                 |
+    |             heter_worker_device_guard                   cpu                  |
+    |                        lr_decay_steps                    10                  |
+    |                            use_ps_gpu                    0                   |
+    |                         use_gpu_graph                    0                   |
+    +==============================================================================+
+    |                    Environment Flags, Communication Flags                    |
+    +------------------------------------------------------------------------------+
+    |                                  mode                    1                   |
+    |                               elastic                  False                 |
+    |                                  auto                  False                 |
+    |                   sync_nccl_allreduce                   True                 |
+    |                         nccl_comm_num                    1                   |
+    |            use_hierarchical_allreduce                  False                 |
+    |   hierarchical_allreduce_inter_nranks                    1                   |
+    |                       sync_batch_norm                  False                 |
+    |                   fuse_all_reduce_ops                   True                 |
+    |                  fuse_grad_size_in_MB                    32                  |
+    |              fuse_grad_size_in_TFLOPS                   50.0                 |
+    |               cudnn_exhaustive_search                  False                 |
+    |             conv_workspace_size_limit                   512                  |
+    |    cudnn_batchnorm_spatial_persistent                  False                 |
+    |                        fp16_allreduce                  False                 |
+    |               last_comm_group_size_MB                   1.0                  |
+    |                find_unused_parameters                  False                 |
+    |            without_graph_optimization                   True                 |
+    |                 fuse_grad_size_in_num                    8                   |
+    |                 calc_comm_same_stream                  False                 |
+    |                                   asp                  False                 |
+    |                       fuse_grad_merge                  False                 |
+    |                             semi_auto                  False                 |
+    |                            adam_d2sum                  False                 |
+    |                           auto_search                  False                 |
+    |                        heter_ccl_mode                  False                 |
+    |                         is_fl_ps_mode                  False                 |
+    |                      with_coordinator                  False                 |
+    |                            split_data                   True                 |
+    |                  downpour_table_param                    []                  |
+    |                       fs_client_param                                        |
+    +==============================================================================+
+    |                                Build Strategy                                |
+    +------------------------------------------------------------------------------+
+    |              fuse_elewise_add_act_ops                  False                 |
+    |                       fuse_bn_act_ops                  False                 |
+    |              fuse_relu_depthwise_conv                  False                 |
+    |                    fuse_broadcast_ops                  False                 |
+    |                fuse_all_optimizer_ops                  False                 |
+    |                        enable_inplace                  False                 |
+    |     enable_backward_optimizer_op_deps                   True                 |
+    |                 cache_runtime_context                  False                 |
+    |                   fuse_bn_add_act_ops                   True                 |
+    |                    enable_auto_fusion                  False                 |
+    |                          enable_addto                  False                 |
+    |              allow_cuda_graph_capture                  False                 |
+    |                       reduce_strategy                    0                   |
+    |                    fuse_gemm_epilogue                  False                 |
+    |                   debug_graphviz_path                                        |
+    |                       fused_attention                  False                 |
+    |                     fused_feedforward                  False                 |
+    |            fuse_dot_product_attention                  False                 |
+    |                          fuse_resunit                  False                 |
+    +==============================================================================+
+[0m
+[32m[2024-12-30 11:19:38,648] [    INFO][0m - The default value for the training argument `--report_to` will change in v5 (from all installed integrations to none). In v5, you will need to use `--report_to all` to get the same behavior as now. You should start updating your code and make this info disappear :-).[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m -      Model Configuration Arguments      [0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - paddle commit id              : 396a3f594f154081b444a3ab40e7f28d89c32521[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - paddlenlp commit id           : 79695ccd747b5a6b18bdec65503aacd419ca9a46.dirty[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - aistudio_repo_id              : None[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - aistudio_repo_license         : Apache License 2.0[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - aistudio_repo_private         : True[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - aistudio_token                : None[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - attention_probs_dropout_prob  : 0.1[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - continue_training             : True[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - flash_mask                    : False[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - from_aistudio                 : False[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - fuse_attention_ffn            : None[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - fuse_attention_qkv            : None[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - hidden_dropout_prob           : 0.1[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - lokr                          : False[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - lokr_dim                      : 8[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - lokr_path                     : None[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - lora                          : True[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - lora_path                     : None[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - lora_plus_scale               : 1.0[0m
+[35m[2024-12-30 11:19:38,649] [   DEBUG][0m - lora_rank                     : 8[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - lora_use_mixer                : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - model_name_or_path            : meta-llama/Llama-2-7b[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - neftune                       : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - neftune_noise_alpha           : 5.0[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - num_prefix_tokens             : 128[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - pissa                         : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - prefix_path                   : None[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - prefix_tuning                 : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - reft                          : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - rope_scaling_factor           : 1.0[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - rslora                        : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - save_to_aistudio              : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - strategy_name                 : None[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - strategy_type                 : None[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - tokenizer_name_or_path        : None[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - use_fast_layer_norm           : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - use_long_sequence_strategies  : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - use_mora                      : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - use_quick_lora                : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - vera                          : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - vera_rank                     : 8[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - weight_blocksize              : 64[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - weight_double_quant           : False[0m
+[35m[2024-12-30 11:19:38,650] [   DEBUG][0m - weight_double_quant_block_size: 256[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - weight_quantize_algo          : None[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - [0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m -       Data Configuration Arguments      [0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - paddle commit id              : 396a3f594f154081b444a3ab40e7f28d89c32521[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - paddlenlp commit id           : 79695ccd747b5a6b18bdec65503aacd419ca9a46.dirty[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - autoregressive                : True[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - chat_template                 : None[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - dataset_name_or_path          : /home/sjx/tr-paddle-1230/train_data[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - eval_with_do_generation       : False[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - greedy_zero_padding           : False[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - lazy                          : False[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - max_length                    : 8192[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - pad_to_max_length             : False[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - pad_to_multiple_of            : None[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - save_generation_output        : False[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - src_length                    : 4096[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - task_name                     : None[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - use_pose_convert              : False[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - zero_padding                  : False[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - [0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 11:19:38,651] [   DEBUG][0m -    Generation Configuration Arguments   [0m
+[35m[2024-12-30 11:19:38,652] [   DEBUG][0m - paddle commit id              : 396a3f594f154081b444a3ab40e7f28d89c32521[0m
+[35m[2024-12-30 11:19:38,652] [   DEBUG][0m - paddlenlp commit id           : 79695ccd747b5a6b18bdec65503aacd419ca9a46.dirty[0m
+[35m[2024-12-30 11:19:38,652] [   DEBUG][0m - top_k                         : 1[0m
+[35m[2024-12-30 11:19:38,652] [   DEBUG][0m - top_p                         : 1.0[0m
+[35m[2024-12-30 11:19:38,652] [   DEBUG][0m - [0m
+[32m[2024-12-30 11:19:38,653] [    INFO][0m - The global seed is set to 48, local seed is set to 56 and random seed is set to 42.[0m
+[33m[2024-12-30 11:19:38,653] [ WARNING][0m - Process rank: 6, device: gpu, world_size: 8, distributed training: True, 16-bits training: True[0m
+[32m[2024-12-30 11:19:38,653] [    INFO][0m - Loading configuration file /home/sjx/.paddlenlp/models/meta-llama/Llama-2-7b/config.json[0m
+[32m[2024-12-30 11:19:38,655] [    INFO][0m - Final model config: LlamaConfig {
+  "alibi": false,
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "bos_token_id": 1,
+  "dpo_config": null,
+  "dtype": "bfloat16",
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "immediate_clear_past_key_value": false,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "long_sequence_init_args": {},
+  "long_sequence_strategy_name": null,
+  "long_sequence_strategy_type": null,
+  "max_position_embeddings": 4096,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 32,
+  "pad_token_id": 0,
+  "paddlenlp_version": "3.0.0b3.post20241230",
+  "pretraining_tp": 1,
+  "recompute": true,
+  "refined_recompute": {},
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_scaling_factor": 2.0,
+  "rope_scaling_type": "linear",
+  "rope_theta": 10000.0,
+  "seq_length": 8192,
+  "tensor_parallel_output": false,
+  "tie_word_embeddings": false,
+  "use_fast_layer_norm": false,
+  "use_flash_attention": true,
+  "use_flash_attention_for_generation": false,
+  "use_last_token_for_generation": false,
+  "use_long_sequence_strategies": false,
+  "vocab_size": 32000
+}
+[0m
+[32m[2024-12-30 11:19:38,655] [    INFO][0m - We are using <class 'paddlenlp.transformers.llama.modeling.LlamaForCausalLM'> to load 'meta-llama/Llama-2-7b'.[0m
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:686: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/_distutils_hack/__init__.py:31: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+[2024-12-30 11:26:13,450] [    INFO] distributed_strategy.py:333 - distributed strategy initialized
+======================= Modified FLAGS detected =======================
+FLAGS(name='FLAGS_nvidia_package_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia', default_value='')
+FLAGS(name='FLAGS_enable_pir_in_executor', current_value=True, default_value=False)
+FLAGS(name='FLAGS_nccl_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/nccl/lib', default_value='')
+FLAGS(name='FLAGS_cusparse_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusparse/lib', default_value='')
+FLAGS(name='FLAGS_cudnn_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cudnn/lib', default_value='')
+FLAGS(name='FLAGS_cublas_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cublas/lib', default_value='')
+FLAGS(name='FLAGS_curand_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/curand/lib', default_value='')
+FLAGS(name='FLAGS_cusolver_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusolver/lib', default_value='')
+FLAGS(name='FLAGS_selected_gpus', current_value='6', default_value='')
+FLAGS(name='FLAGS_cupti_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cuda_cupti/lib', default_value='')
+=======================================================================
+I1230 11:26:13.452198 4028362 tcp_utils.cc:130] Successfully connected to 10.3.242.26:38214
+I1230 11:26:13.527654 4028362 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:26:13.527714 4028362 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:26:13,528] [    INFO] topology.py:370 - Total 8 pipe comm group(s) create successfully!
+W1230 11:26:13.531602 4028362 gpu_resources.cc:119] Please NOTE: device: 6, GPU Compute Capability: 8.0, Driver API Version: 12.2, Runtime API Version: 11.7
+W1230 11:26:13.532490 4028362 gpu_resources.cc:164] device: 6, cuDNN Version: 8.9.
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/distributed/communication/group.py:128: UserWarning: Current global rank 6 is not in group _default_pg16
+  warnings.warn(
+[2024-12-30 11:26:17,252] [    INFO] topology.py:370 - Total 8 data comm group(s) create successfully!
+[2024-12-30 11:26:17,253] [    INFO] topology.py:370 - Total 8 model comm group(s) create successfully!
+I1230 11:26:17.253167 4028362 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:26:17.253190 4028362 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:26:17,253] [    INFO] topology.py:370 - Total 1 sharding comm group(s) create successfully!
+I1230 11:26:17.253293 4028362 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:26:17.253297 4028362 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:26:17,253] [    INFO] topology.py:290 - HybridParallelInfo: rank_id: 6, mp_degree: 1, sharding_degree: 8, pp_degree: 1, dp_degree: 1, sep_degree: 1, mp_group: [6],  sharding_group: [0, 1, 2, 3, 4, 5, 6, 7], pp_group: [6], dp_group: [6], sep:group: None, check/clip group: [0, 1, 2, 3, 4, 5, 6, 7]
+[32m[2024-12-30 11:26:17,253] [    INFO][0m -     +==============================================================================+
+    |                                                                              |
+    |                         DistributedStrategy Overview                         |
+    |                                                                              |
+    +==============================================================================+
+    |                        a_sync=True <-> a_sync_configs                        |
+    +------------------------------------------------------------------------------+
+    |                               k_steps                    -1                  |
+    |                     max_merge_var_num                    1                   |
+    |                       send_queue_size                    16                  |
+    |               independent_recv_thread                  False                 |
+    |         min_send_grad_num_before_recv                    1                   |
+    |                      thread_pool_size                    1                   |
+    |                       send_wait_times                    1                   |
+    |               runtime_split_send_recv                  False                 |
+    |                        launch_barrier                   True                 |
+    |             heter_worker_device_guard                   cpu                  |
+    |                        lr_decay_steps                    10                  |
+    |                            use_ps_gpu                    0                   |
+    |                         use_gpu_graph                    0                   |
+    +==============================================================================+
+    |                    Environment Flags, Communication Flags                    |
+    +------------------------------------------------------------------------------+
+    |                                  mode                    1                   |
+    |                               elastic                  False                 |
+    |                                  auto                  False                 |
+    |                   sync_nccl_allreduce                   True                 |
+    |                         nccl_comm_num                    1                   |
+    |            use_hierarchical_allreduce                  False                 |
+    |   hierarchical_allreduce_inter_nranks                    1                   |
+    |                       sync_batch_norm                  False                 |
+    |                   fuse_all_reduce_ops                   True                 |
+    |                  fuse_grad_size_in_MB                    32                  |
+    |              fuse_grad_size_in_TFLOPS                   50.0                 |
+    |               cudnn_exhaustive_search                  False                 |
+    |             conv_workspace_size_limit                   512                  |
+    |    cudnn_batchnorm_spatial_persistent                  False                 |
+    |                        fp16_allreduce                  False                 |
+    |               last_comm_group_size_MB                   1.0                  |
+    |                find_unused_parameters                  False                 |
+    |            without_graph_optimization                   True                 |
+    |                 fuse_grad_size_in_num                    8                   |
+    |                 calc_comm_same_stream                  False                 |
+    |                                   asp                  False                 |
+    |                       fuse_grad_merge                  False                 |
+    |                             semi_auto                  False                 |
+    |                            adam_d2sum                  False                 |
+    |                           auto_search                  False                 |
+    |                        heter_ccl_mode                  False                 |
+    |                         is_fl_ps_mode                  False                 |
+    |                      with_coordinator                  False                 |
+    |                            split_data                   True                 |
+    |                  downpour_table_param                    []                  |
+    |                       fs_client_param                                        |
+    +==============================================================================+
+    |                                Build Strategy                                |
+    +------------------------------------------------------------------------------+
+    |              fuse_elewise_add_act_ops                  False                 |
+    |                       fuse_bn_act_ops                  False                 |
+    |              fuse_relu_depthwise_conv                  False                 |
+    |                    fuse_broadcast_ops                  False                 |
+    |                fuse_all_optimizer_ops                  False                 |
+    |                        enable_inplace                  False                 |
+    |     enable_backward_optimizer_op_deps                   True                 |
+    |                 cache_runtime_context                  False                 |
+    |                   fuse_bn_add_act_ops                   True                 |
+    |                    enable_auto_fusion                  False                 |
+    |                          enable_addto                  False                 |
+    |              allow_cuda_graph_capture                  False                 |
+    |                       reduce_strategy                    0                   |
+    |                    fuse_gemm_epilogue                  False                 |
+    |                   debug_graphviz_path                                        |
+    |                       fused_attention                  False                 |
+    |                     fused_feedforward                  False                 |
+    |            fuse_dot_product_attention                  False                 |
+    |                          fuse_resunit                  False                 |
+    +==============================================================================+
+[0m
+[32m[2024-12-30 11:26:17,254] [    INFO][0m - The default value for the training argument `--report_to` will change in v5 (from all installed integrations to none). In v5, you will need to use `--report_to all` to get the same behavior as now. You should start updating your code and make this info disappear :-).[0m
+[35m[2024-12-30 11:26:17,254] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 11:26:17,254] [   DEBUG][0m -      Model Configuration Arguments      [0m
+[35m[2024-12-30 11:26:17,254] [   DEBUG][0m - paddle commit id              : 396a3f594f154081b444a3ab40e7f28d89c32521[0m
+[35m[2024-12-30 11:26:17,254] [   DEBUG][0m - paddlenlp commit id           : 79695ccd747b5a6b18bdec65503aacd419ca9a46.dirty[0m
+[35m[2024-12-30 11:26:17,254] [   DEBUG][0m - aistudio_repo_id              : None[0m
+[35m[2024-12-30 11:26:17,254] [   DEBUG][0m - aistudio_repo_license         : Apache License 2.0[0m
+[35m[2024-12-30 11:26:17,254] [   DEBUG][0m - aistudio_repo_private         : True[0m
+[35m[2024-12-30 11:26:17,254] [   DEBUG][0m - aistudio_token                : None[0m
+[35m[2024-12-30 11:26:17,254] [   DEBUG][0m - attention_probs_dropout_prob  : 0.1[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - continue_training             : True[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - flash_mask                    : False[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - from_aistudio                 : False[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - fuse_attention_ffn            : None[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - fuse_attention_qkv            : None[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - hidden_dropout_prob           : 0.1[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - lokr                          : False[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - lokr_dim                      : 8[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - lokr_path                     : None[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - lora                          : True[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - lora_path                     : None[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - lora_plus_scale               : 1.0[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - lora_rank                     : 8[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - lora_use_mixer                : False[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - model_name_or_path            : meta-llama/Llama-2-7b[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - neftune                       : False[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - neftune_noise_alpha           : 5.0[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - num_prefix_tokens             : 128[0m
+[35m[2024-12-30 11:26:17,255] [   DEBUG][0m - pissa                         : False[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - prefix_path                   : None[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - prefix_tuning                 : False[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - reft                          : False[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - rope_scaling_factor           : 1.0[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - rslora                        : False[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - save_to_aistudio              : False[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - strategy_name                 : None[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - strategy_type                 : None[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - tokenizer_name_or_path        : None[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - use_fast_layer_norm           : False[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - use_long_sequence_strategies  : False[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - use_mora                      : False[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - use_quick_lora                : False[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - vera                          : False[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - vera_rank                     : 8[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - weight_blocksize              : 64[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - weight_double_quant           : False[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - weight_double_quant_block_size: 256[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - weight_quantize_algo          : None[0m
+[35m[2024-12-30 11:26:17,256] [   DEBUG][0m - [0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m -       Data Configuration Arguments      [0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - paddle commit id              : 396a3f594f154081b444a3ab40e7f28d89c32521[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - paddlenlp commit id           : 79695ccd747b5a6b18bdec65503aacd419ca9a46.dirty[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - autoregressive                : True[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - chat_template                 : None[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - dataset_name_or_path          : /home/sjx/tr-paddle-1230/train_data[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - eval_with_do_generation       : False[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - greedy_zero_padding           : False[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - lazy                          : False[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - max_length                    : 8192[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - pad_to_max_length             : False[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - pad_to_multiple_of            : None[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - save_generation_output        : False[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - src_length                    : 4096[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - task_name                     : None[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - use_pose_convert              : False[0m
+[35m[2024-12-30 11:26:17,257] [   DEBUG][0m - zero_padding                  : False[0m
+[35m[2024-12-30 11:26:17,258] [   DEBUG][0m - [0m
+[35m[2024-12-30 11:26:17,258] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 11:26:17,258] [   DEBUG][0m -    Generation Configuration Arguments   [0m
+[35m[2024-12-30 11:26:17,258] [   DEBUG][0m - paddle commit id              : 396a3f594f154081b444a3ab40e7f28d89c32521[0m
+[35m[2024-12-30 11:26:17,258] [   DEBUG][0m - paddlenlp commit id           : 79695ccd747b5a6b18bdec65503aacd419ca9a46.dirty[0m
+[35m[2024-12-30 11:26:17,258] [   DEBUG][0m - top_k                         : 1[0m
+[35m[2024-12-30 11:26:17,258] [   DEBUG][0m - top_p                         : 1.0[0m
+[35m[2024-12-30 11:26:17,258] [   DEBUG][0m - [0m
+[32m[2024-12-30 11:26:17,259] [    INFO][0m - The global seed is set to 48, local seed is set to 56 and random seed is set to 42.[0m
+[33m[2024-12-30 11:26:17,260] [ WARNING][0m - Process rank: 6, device: gpu, world_size: 8, distributed training: True, 16-bits training: True[0m
+[32m[2024-12-30 11:26:17,260] [    INFO][0m - Loading configuration file /home/sjx/.paddlenlp/models/meta-llama/Llama-2-7b/config.json[0m
+[32m[2024-12-30 11:26:17,262] [    INFO][0m - Final model config: LlamaConfig {
+  "alibi": false,
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "bos_token_id": 1,
+  "dpo_config": null,
+  "dtype": "bfloat16",
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "immediate_clear_past_key_value": false,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "long_sequence_init_args": {},
+  "long_sequence_strategy_name": null,
+  "long_sequence_strategy_type": null,
+  "max_position_embeddings": 4096,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 32,
+  "pad_token_id": 0,
+  "paddlenlp_version": "3.0.0b3.post20241230",
+  "pretraining_tp": 1,
+  "recompute": true,
+  "refined_recompute": {},
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_scaling_factor": 2.0,
+  "rope_scaling_type": "linear",
+  "rope_theta": 10000.0,
+  "seq_length": 8192,
+  "tensor_parallel_output": false,
+  "tie_word_embeddings": false,
+  "use_fast_layer_norm": false,
+  "use_flash_attention": true,
+  "use_flash_attention_for_generation": false,
+  "use_last_token_for_generation": false,
+  "use_long_sequence_strategies": false,
+  "vocab_size": 32000
+}
+[0m
+[32m[2024-12-30 11:26:17,263] [    INFO][0m - We are using <class 'paddlenlp.transformers.llama.modeling.LlamaForCausalLM'> to load 'meta-llama/Llama-2-7b'.[0m
+(…)ta-llama/Llama-2-7b/model_state.pdparams:   0%|          | 0.00/13.5G [00:00<?, ?B/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   0%|          | 10.5M/13.5G [00:03<1:18:57, 2.84MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   0%|          | 21.0M/13.5G [00:05<58:26, 3.84MB/s]  (…)ta-llama/Llama-2-7b/model_state.pdparams:   0%|          | 31.5M/13.5G [00:07<53:28, 4.19MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   0%|          | 41.9M/13.5G [00:09<47:56, 4.67MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   0%|          | 52.4M/13.5G [00:11<40:56, 5.47MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   0%|          | 62.9M/13.5G [00:12<37:40, 5.93MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|          | 73.4M/13.5G [00:14<39:03, 5.72MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|          | 83.9M/13.5G [00:16<38:52, 5.74MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|          | 94.4M/13.5G [00:18<40:56, 5.45MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|          | 105M/13.5G [00:20<40:24, 5.51MB/s] (…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|          | 115M/13.5G [00:22<38:36, 5.77MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|          | 126M/13.5G [00:23<38:13, 5.82MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|          | 136M/13.5G [00:25<37:39, 5.90MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|          | 147M/13.5G [00:27<36:59, 6.01MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|          | 157M/13.5G [00:28<36:31, 6.08MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|          | 168M/13.5G [00:30<36:10, 6.13MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|▏         | 178M/13.5G [00:32<35:54, 6.17MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|▏         | 189M/13.5G [00:34<36:37, 6.05MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   1%|▏         | 199M/13.5G [00:36<38:14, 5.79MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 210M/13.5G [00:37<38:11, 5.79MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 220M/13.5G [00:39<40:15, 5.49MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 231M/13.5G [00:41<39:58, 5.52MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 241M/13.5G [00:43<38:55, 5.67MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 252M/13.5G [00:45<37:54, 5.81MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 262M/13.5G [00:46<37:06, 5.94MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 273M/13.5G [00:49<39:04, 5.63MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 283M/13.5G [00:50<38:50, 5.66MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 294M/13.5G [00:53<40:43, 5.40MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 304M/13.5G [00:54<40:06, 5.47MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 315M/13.5G [00:57<41:30, 5.29MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 325M/13.5G [00:58<40:39, 5.39MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   2%|▏         | 336M/13.5G [01:00<39:21, 5.56MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   3%|▎         | 346M/13.5G [01:02<38:10, 5.73MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   3%|▎         | 357M/13.5G [01:04<37:13, 5.88MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   3%|▎         | 367M/13.5G [01:05<36:28, 5.99MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   3%|▎         | 377M/13.5G [01:07<35:59, 6.06MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   3%|▎         | 388M/13.5G [01:09<38:15, 5.70MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   3%|▎         | 398M/13.5G [01:11<38:17, 5.69MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   3%|▎         | 409M/13.5G [01:13<37:38, 5.78MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   3%|▎         | 419M/13.5G [01:14<36:53, 5.90MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   3%|▎         | 430M/13.5G [01:16<36:11, 6.01MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   3%|▎         | 440M/13.5G [01:18<35:40, 6.09MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   3%|▎         | 451M/13.5G [01:19<35:21, 6.14MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   3%|▎         | 461M/13.5G [01:21<34:59, 6.20MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▎         | 472M/13.5G [01:23<34:44, 6.24MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▎         | 482M/13.5G [01:24<34:38, 6.25MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▎         | 493M/13.5G [01:26<37:02, 5.84MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▎         | 503M/13.5G [01:28<37:12, 5.81MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▍         | 514M/13.5G [01:29<34:17, 6.30MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▍         | 524M/13.5G [01:31<35:34, 6.07MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▍         | 535M/13.5G [01:33<35:46, 6.03MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▍         | 545M/13.5G [01:35<35:29, 6.07MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▍         | 556M/13.5G [01:37<37:44, 5.71MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▍         | 566M/13.5G [01:38<35:11, 6.11MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▍         | 577M/13.5G [01:40<36:24, 5.90MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▍         | 587M/13.5G [01:42<36:24, 5.90MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   4%|▍         | 598M/13.5G [01:44<36:01, 5.96MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▍         | 608M/13.5G [01:45<35:35, 6.03MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▍         | 619M/13.5G [01:47<35:09, 6.10MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▍         | 629M/13.5G [01:49<34:50, 6.15MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▍         | 640M/13.5G [01:51<37:04, 5.77MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▍         | 650M/13.5G [01:53<37:16, 5.74MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▍         | 661M/13.5G [01:54<36:34, 5.84MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▍         | 671M/13.5G [01:56<33:28, 6.38MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▌         | 682M/13.5G [01:57<32:16, 6.61MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▌         | 692M/13.5G [01:59<34:39, 6.15MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▌         | 703M/13.5G [02:01<37:42, 5.65MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▌         | 713M/13.5G [02:03<37:45, 5.63MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▌         | 724M/13.5G [02:05<39:25, 5.39MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   5%|▌         | 734M/13.5G [02:07<38:49, 5.47MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▌         | 744M/13.5G [02:09<40:07, 5.29MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▌         | 755M/13.5G [02:11<36:46, 5.77MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▌         | 765M/13.5G [02:12<34:55, 6.07MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▌         | 776M/13.5G [02:14<34:09, 6.20MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▌         | 786M/13.5G [02:16<36:10, 5.85MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▌         | 797M/13.5G [02:17<33:48, 6.25MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▌         | 807M/13.5G [02:19<32:49, 6.43MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▌         | 818M/13.5G [02:21<35:35, 5.93MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▌         | 828M/13.5G [02:23<36:18, 5.81MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▌         | 839M/13.5G [02:24<33:35, 6.27MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▋         | 849M/13.5G [02:26<34:55, 6.03MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▋         | 860M/13.5G [02:28<35:09, 5.98MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   6%|▋         | 870M/13.5G [02:30<37:27, 5.61MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 881M/13.5G [02:32<37:17, 5.63MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 891M/13.5G [02:34<38:55, 5.39MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 902M/13.5G [02:36<38:17, 5.47MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 912M/13.5G [02:37<34:46, 6.02MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 923M/13.5G [02:39<35:39, 5.87MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 933M/13.5G [02:41<37:02, 5.64MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 944M/13.5G [02:43<35:15, 5.92MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 954M/13.5G [02:44<34:17, 6.09MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 965M/13.5G [02:46<36:07, 5.77MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 975M/13.5G [02:49<38:37, 5.40MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 986M/13.5G [02:50<38:19, 5.43MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 996M/13.5G [02:53<39:39, 5.24MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   7%|▋         | 1.01G/13.5G [02:55<41:07, 5.05MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.02G/13.5G [02:56<37:31, 5.53MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.03G/13.5G [02:58<33:11, 6.25MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.04G/13.5G [02:59<33:34, 6.17MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.05G/13.5G [03:01<33:32, 6.17MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.06G/13.5G [03:03<36:00, 5.75MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.07G/13.5G [03:05<36:09, 5.72MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.08G/13.5G [03:07<38:00, 5.44MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.09G/13.5G [03:09<37:26, 5.51MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.10G/13.5G [03:10<34:02, 6.06MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.11G/13.5G [03:12<36:07, 5.70MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.12G/13.5G [03:15<38:22, 5.37MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.13G/13.5G [03:16<37:08, 5.54MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   8%|▊         | 1.14G/13.5G [03:18<38:19, 5.36MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▊         | 1.15G/13.5G [03:20<37:42, 5.45MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▊         | 1.16G/13.5G [03:22<36:34, 5.61MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▊         | 1.17G/13.5G [03:24<35:33, 5.77MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▉         | 1.18G/13.5G [03:26<37:05, 5.52MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▉         | 1.20G/13.5G [03:28<36:41, 5.58MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▉         | 1.21G/13.5G [03:30<38:13, 5.35MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▉         | 1.22G/13.5G [03:32<37:37, 5.43MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▉         | 1.23G/13.5G [03:33<36:31, 5.59MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▉         | 1.24G/13.5G [03:35<35:33, 5.74MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▉         | 1.25G/13.5G [03:37<34:37, 5.89MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▉         | 1.26G/13.5G [03:38<33:59, 5.99MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▉         | 1.27G/13.5G [03:40<33:31, 6.07MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:   9%|▉         | 1.28G/13.5G [03:42<33:08, 6.13MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  10%|▉         | 1.29G/13.5G [03:43<32:45, 6.20MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  10%|▉         | 1.30G/13.5G [03:46<34:57, 5.80MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  10%|▉         | 1.31G/13.5G [03:47<32:43, 6.20MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  10%|▉         | 1.32G/13.5G [03:49<34:14, 5.92MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  10%|▉         | 1.33G/13.5G [03:51<34:17, 5.90MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  10%|▉         | 1.34G/13.5G [03:52<31:34, 6.40MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  10%|█         | 1.35G/13.5G [03:54<32:48, 6.16MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  10%|█         | 1.36G/13.5G [03:55<30:49, 6.55MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  10%|█         | 1.37G/13.5G [03:57<30:03, 6.71MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  10%|█         | 1.38G/13.5G [03:58<30:01, 6.71MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  10%|█         | 1.39G/13.5G [04:00<32:33, 6.19MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  10%|█         | 1.41G/13.5G [04:02<33:17, 6.04MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█         | 1.42G/13.5G [04:04<35:34, 5.65MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█         | 1.43G/13.5G [04:06<35:31, 5.65MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█         | 1.44G/13.5G [04:08<37:12, 5.39MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█         | 1.45G/13.5G [04:10<36:41, 5.47MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█         | 1.46G/13.5G [04:12<35:37, 5.62MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█         | 1.47G/13.5G [04:14<34:34, 5.79MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█         | 1.48G/13.5G [04:15<33:46, 5.92MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█         | 1.49G/13.5G [04:17<35:25, 5.64MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█         | 1.50G/13.5G [04:19<35:12, 5.67MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█         | 1.51G/13.5G [04:21<34:37, 5.76MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█▏        | 1.52G/13.5G [04:23<33:48, 5.89MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█▏        | 1.53G/13.5G [04:24<33:09, 6.00MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  11%|█▏        | 1.54G/13.5G [04:26<32:49, 6.06MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.55G/13.5G [04:28<32:27, 6.12MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.56G/13.5G [04:30<34:35, 5.74MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.57G/13.5G [04:32<36:55, 5.37MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.58G/13.5G [04:34<37:25, 5.30MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.59G/13.5G [04:36<36:07, 5.48MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.60G/13.5G [04:38<37:21, 5.30MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.61G/13.5G [04:40<36:39, 5.39MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.63G/13.5G [04:41<35:27, 5.57MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.64G/13.5G [04:43<34:23, 5.74MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.65G/13.5G [04:45<33:31, 5.88MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.66G/13.5G [04:47<32:52, 5.99MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.67G/13.5G [04:48<32:25, 6.07MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  12%|█▏        | 1.68G/13.5G [04:50<31:58, 6.15MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.69G/13.5G [04:52<31:53, 6.16MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.70G/13.5G [04:54<34:40, 5.66MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.71G/13.5G [04:56<34:31, 5.68MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.72G/13.5G [04:57<33:55, 5.78MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.73G/13.5G [04:59<33:20, 5.87MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.74G/13.5G [05:01<32:43, 5.98MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.75G/13.5G [05:02<32:32, 6.01MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.76G/13.5G [05:05<34:22, 5.68MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.77G/13.5G [05:06<32:42, 5.96MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.78G/13.5G [05:08<31:01, 6.28MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.79G/13.5G [05:09<30:09, 6.46MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.80G/13.5G [05:10<27:51, 6.99MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  13%|█▎        | 1.81G/13.5G [05:11<25:14, 7.70MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▎        | 1.82G/13.5G [05:13<24:17, 8.00MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▎        | 1.84G/13.5G [05:14<24:37, 7.88MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▎        | 1.85G/13.5G [05:16<29:21, 6.60MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▍        | 1.86G/13.5G [05:18<29:47, 6.50MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▍        | 1.87G/13.5G [05:20<32:20, 5.98MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▍        | 1.88G/13.5G [05:22<32:42, 5.91MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▍        | 1.89G/13.5G [05:24<34:31, 5.59MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▍        | 1.90G/13.5G [05:26<36:06, 5.34MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▍        | 1.91G/13.5G [05:27<33:43, 5.72MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▍        | 1.92G/13.5G [05:29<32:18, 5.96MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▍        | 1.93G/13.5G [05:31<31:36, 6.09MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▍        | 1.94G/13.5G [05:32<31:04, 6.19MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  14%|█▍        | 1.95G/13.5G [05:34<30:42, 6.26MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▍        | 1.96G/13.5G [05:36<30:31, 6.29MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▍        | 1.97G/13.5G [05:38<32:41, 5.87MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▍        | 1.98G/13.5G [05:39<32:53, 5.83MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▍        | 1.99G/13.5G [05:42<34:55, 5.48MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▍        | 2.00G/13.5G [05:44<36:48, 5.20MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▍        | 2.01G/13.5G [05:46<36:06, 5.29MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▌        | 2.02G/13.5G [05:48<34:45, 5.49MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▌        | 2.03G/13.5G [05:49<31:22, 6.08MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▌        | 2.04G/13.5G [05:51<32:04, 5.94MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▌        | 2.06G/13.5G [05:53<34:12, 5.56MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▌        | 2.07G/13.5G [05:55<33:59, 5.59MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▌        | 2.08G/13.5G [05:56<33:12, 5.72MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  15%|█▌        | 2.09G/13.5G [05:58<33:54, 5.60MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▌        | 2.10G/13.5G [06:00<31:57, 5.93MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▌        | 2.11G/13.5G [06:01<28:52, 6.56MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▌        | 2.12G/13.5G [06:03<29:44, 6.36MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▌        | 2.13G/13.5G [06:05<30:55, 6.12MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▌        | 2.14G/13.5G [06:06<30:27, 6.20MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▌        | 2.15G/13.5G [06:08<30:13, 6.25MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▌        | 2.16G/13.5G [06:10<32:19, 5.84MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▌        | 2.17G/13.5G [06:12<30:11, 6.24MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▌        | 2.18G/13.5G [06:13<29:19, 6.42MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▋        | 2.19G/13.5G [06:15<31:13, 6.02MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▋        | 2.20G/13.5G [06:17<31:39, 5.94MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▋        | 2.21G/13.5G [06:19<33:38, 5.58MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  16%|█▋        | 2.22G/13.5G [06:21<33:27, 5.61MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  17%|█▋        | 2.23G/13.5G [06:23<32:40, 5.74MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  17%|█▋        | 2.24G/13.5G [06:24<29:46, 6.29MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  17%|█▋        | 2.25G/13.5G [06:26<30:44, 6.08MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  17%|█▋        | 2.26G/13.5G [06:28<33:00, 5.66MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  17%|█▋        | 2.28G/13.5G [06:30<32:59, 5.66MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  17%|█▋        | 2.29G/13.5G [06:32<32:22, 5.76MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  17%|█▋        | 2.30G/13.5G [06:33<31:46, 5.86MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  17%|█▋        | 2.31G/13.5G [06:35<31:08, 5.98MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  17%|█▋        | 2.32G/13.5G [06:37<32:56, 5.65MB/s](…)ta-llama/Llama-2-7b/model_state.pdparams:  17%|█▋        | 2.33G/13.5G [06:39<32:53, 5.65MB/s]

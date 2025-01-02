@@ -1,0 +1,509 @@
+Traceback (most recent call last):
+  File "/home/sjx/tr-paddle-1230/llm/run_finetune.py", line 23, in <module>
+    from utils.data import convert_example_for_reft, get_convert_example
+  File "/home/sjx/tr-paddle-1230/llm/utils/data.py", line 19, in <module>
+    from paddlenlp.peft import LoRAModel, PrefixModelForCausalLM
+ModuleNotFoundError: No module named 'paddlenlp'
+Traceback (most recent call last):
+  File "/home/sjx/tr-paddle-1230/llm/run_finetune.py", line 23, in <module>
+    from utils.data import convert_example_for_reft, get_convert_example
+  File "/home/sjx/tr-paddle-1230/llm/utils/data.py", line 19, in <module>
+    from paddlenlp.peft import LoRAModel, PrefixModelForCausalLM
+ModuleNotFoundError: No module named 'paddlenlp'
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/_distutils_hack/__init__.py:31: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+[32m[2024-12-30 09:31:58,865] [    INFO][0m - using `logging_steps` to initialize `eval_steps` to 1[0m
+[2024-12-30 09:31:58,866] [    INFO] distributed_strategy.py:214 - distributed strategy initialized
+======================= Modified FLAGS detected =======================
+FLAGS(name='FLAGS_cusparse_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusparse/lib', default_value='')
+FLAGS(name='FLAGS_selected_gpus', current_value='1', default_value='')
+FLAGS(name='FLAGS_cublas_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cublas/lib', default_value='')
+FLAGS(name='FLAGS_nvidia_package_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia', default_value='')
+FLAGS(name='FLAGS_cudnn_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cudnn/lib', default_value='')
+FLAGS(name='FLAGS_cusolver_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusolver/lib', default_value='')
+FLAGS(name='FLAGS_cupti_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cuda_cupti/lib', default_value='')
+FLAGS(name='FLAGS_nccl_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/nccl/lib', default_value='')
+FLAGS(name='FLAGS_curand_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/curand/lib', default_value='')
+=======================================================================
+I1230 09:31:58.867340 3949863 tcp_utils.cc:107] Retry to connect to 127.0.0.1:54457 while the server is not yet listening.
+I1230 09:32:01.867568 3949863 tcp_utils.cc:130] Successfully connected to 127.0.0.1:54457
+I1230 09:32:01.955552 3949863 process_group_nccl.cc:138] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 09:32:01.955595 3949863 process_group_nccl.cc:139] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 09:32:02,340] [    INFO] topology.py:357 - Total 2 pipe comm group(s) create successfully!
+W1230 09:32:02.343544 3949863 gpu_resources.cc:119] Please NOTE: device: 1, GPU Compute Capability: 8.0, Driver API Version: 12.2, Runtime API Version: 12.2
+W1230 09:32:02.344660 3949863 gpu_resources.cc:164] device: 1, cuDNN Version: 9.0.
+W1230 09:32:02.344677 3949863 gpu_resources.cc:196] WARNING: device: 1. The installed Paddle is compiled with CUDA 12.3, but CUDA runtime version in your machine is 12.2, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDA version.
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/distributed/communication/group.py:114: UserWarning: Current global rank 1 is not in group _default_pg11
+  warnings.warn(
+[2024-12-30 09:32:02,366] [    INFO] topology.py:357 - Total 2 data comm group(s) create successfully!
+I1230 09:32:02.366191 3949863 process_group_nccl.cc:138] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 09:32:02.366201 3949863 process_group_nccl.cc:139] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 09:32:02,366] [    INFO] topology.py:357 - Total 1 model comm group(s) create successfully!
+[2024-12-30 09:32:02,366] [    INFO] topology.py:357 - Total 2 sharding comm group(s) create successfully!
+I1230 09:32:02.366322 3949863 process_group_nccl.cc:138] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 09:32:02.366326 3949863 process_group_nccl.cc:139] ProcessGroupNCCL nccl_comm_init_option_ 0
+I1230 09:32:02.366349 3949863 process_group_nccl.cc:138] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 09:32:02.366353 3949863 process_group_nccl.cc:139] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 09:32:02,366] [    INFO] topology.py:279 - HybridParallelInfo: rank_id: 1, mp_degree: 2, sharding_degree: 1, pp_degree: 1, dp_degree: 1, sep_degree: 1, mp_group: [0, 1],  sharding_group: [1], pp_group: [1], dp_group: [1], sep:group: None, check/clip group: [0, 1]
+[32m[2024-12-30 09:32:02,367] [    INFO][0m -     +==============================================================================+
+    |                                                                              |
+    |                         DistributedStrategy Overview                         |
+    |                                                                              |
+    +==============================================================================+
+    |                        a_sync=True <-> a_sync_configs                        |
+    +------------------------------------------------------------------------------+
+    |                               k_steps                    -1                  |
+    |                     max_merge_var_num                    1                   |
+    |                       send_queue_size                    16                  |
+    |               independent_recv_thread                  False                 |
+    |         min_send_grad_num_before_recv                    1                   |
+    |                      thread_pool_size                    1                   |
+    |                       send_wait_times                    1                   |
+    |               runtime_split_send_recv                  False                 |
+    |                        launch_barrier                   True                 |
+    |             heter_worker_device_guard                   cpu                  |
+    |                        lr_decay_steps                    10                  |
+    |                            use_ps_gpu                    0                   |
+    +==============================================================================+
+    |                    Environment Flags, Communication Flags                    |
+    +------------------------------------------------------------------------------+
+    |                                  mode                    1                   |
+    |                               elastic                  False                 |
+    |                                  auto                  False                 |
+    |                   sync_nccl_allreduce                   True                 |
+    |                         nccl_comm_num                    1                   |
+    |            use_hierarchical_allreduce                  False                 |
+    |   hierarchical_allreduce_inter_nranks                    1                   |
+    |                       sync_batch_norm                  False                 |
+    |                   fuse_all_reduce_ops                   True                 |
+    |                  fuse_grad_size_in_MB                    32                  |
+    |              fuse_grad_size_in_TFLOPS                   50.0                 |
+    |               cudnn_exhaustive_search                  False                 |
+    |             conv_workspace_size_limit                   512                  |
+    |    cudnn_batchnorm_spatial_persistent                  False                 |
+    |                        fp16_allreduce                  False                 |
+    |               last_comm_group_size_MB                   1.0                  |
+    |                find_unused_parameters                  False                 |
+    |            without_graph_optimization                   True                 |
+    |                 fuse_grad_size_in_num                    8                   |
+    |                 calc_comm_same_stream                  False                 |
+    |                                   asp                  False                 |
+    |                       fuse_grad_merge                  False                 |
+    |                             semi_auto                  False                 |
+    |                            adam_d2sum                  False                 |
+    |                           auto_search                  False                 |
+    |                        heter_ccl_mode                  False                 |
+    |                         is_fl_ps_mode                  False                 |
+    |                      with_coordinator                  False                 |
+    |                            split_data                   True                 |
+    |                  downpour_table_param                    []                  |
+    |                       fs_client_param                                        |
+    |                    execution_strategy                                        |
+    +==============================================================================+
+    |                                Build Strategy                                |
+    +------------------------------------------------------------------------------+
+    |           enable_sequential_execution                  False                 |
+    |              fuse_elewise_add_act_ops                  False                 |
+    |                       fuse_bn_act_ops                  False                 |
+    |              fuse_relu_depthwise_conv                  False                 |
+    |                    fuse_broadcast_ops                  False                 |
+    |                fuse_all_optimizer_ops                  False                 |
+    |                        enable_inplace                  False                 |
+    |     enable_backward_optimizer_op_deps                   True                 |
+    |                 cache_runtime_context                  False                 |
+    |                   fuse_bn_add_act_ops                   True                 |
+    |                    enable_auto_fusion                  False                 |
+    |                          enable_addto                  False                 |
+    |                      fix_op_run_order                  False                 |
+    |              allow_cuda_graph_capture                  False                 |
+    |                       reduce_strategy                    0                   |
+    |                    fuse_gemm_epilogue                  False                 |
+    |                   debug_graphviz_path                                        |
+    |                       fused_attention                  False                 |
+    |                     fused_feedforward                  False                 |
+    |            fuse_dot_product_attention                  False                 |
+    |                          fuse_resunit                  False                 |
+    +==============================================================================+
+[0m
+[32m[2024-12-30 09:32:02,367] [    INFO][0m - The default value for the training argument `--report_to` will change in v5 (from all installed integrations to none). In v5, you will need to use `--report_to all` to get the same behavior as now. You should start updating your code and make this info disappear :-).[0m
+[35m[2024-12-30 09:32:02,367] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 09:32:02,367] [   DEBUG][0m -      Model Configuration Arguments      [0m
+[35m[2024-12-30 09:32:02,367] [   DEBUG][0m - paddle commit id              : a842a0f40f6111fb0c2df218130d0560aa747bc8[0m
+[35m[2024-12-30 09:32:02,367] [   DEBUG][0m - paddlenlp commit id           : 418c3a511dcfa20eccba40f65cb59543c2040e43[0m
+[35m[2024-12-30 09:32:02,367] [   DEBUG][0m - aistudio_repo_id              : None[0m
+[35m[2024-12-30 09:32:02,367] [   DEBUG][0m - aistudio_repo_license         : Apache License 2.0[0m
+[35m[2024-12-30 09:32:02,367] [   DEBUG][0m - aistudio_repo_private         : True[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - aistudio_token                : None[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - attention_probs_dropout_prob  : 0.1[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - continue_training             : True[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - flash_mask                    : False[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - from_aistudio                 : False[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - fuse_attention_ffn            : None[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - fuse_attention_qkv            : None[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - hidden_dropout_prob           : 0.1[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - lokr                          : False[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - lokr_dim                      : 8[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - lokr_path                     : None[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - lora                          : False[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - lora_path                     : None[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - lora_plus_scale               : 1.0[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - lora_rank                     : 8[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - lora_use_mixer                : False[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - model_name_or_path            : __internal_testing__/tiny-random-llama[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - neftune                       : False[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - neftune_noise_alpha           : 5.0[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - num_prefix_tokens             : 128[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - pissa                         : False[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - prefix_path                   : None[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - prefix_tuning                 : False[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - reft                          : False[0m
+[35m[2024-12-30 09:32:02,368] [   DEBUG][0m - rope_scaling_factor           : 1.0[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - rslora                        : False[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - save_to_aistudio              : False[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - strategy_name                 : None[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - strategy_type                 : None[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - tokenizer_name_or_path        : None[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - use_fast_layer_norm           : False[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - use_long_sequence_strategies  : False[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - use_quick_lora                : False[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - vera                          : False[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - vera_rank                     : 8[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - weight_blocksize              : 64[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - weight_double_quant           : False[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - weight_double_quant_block_size: 256[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - weight_quantize_algo          : None[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - [0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m -       Data Configuration Arguments      [0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - paddle commit id              : a842a0f40f6111fb0c2df218130d0560aa747bc8[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - paddlenlp commit id           : 418c3a511dcfa20eccba40f65cb59543c2040e43[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - autoregressive                : False[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - chat_template                 : None[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - dataset_name_or_path          : ./tests/fixtures/llm/data/[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - eval_with_do_generation       : False[0m
+[35m[2024-12-30 09:32:02,369] [   DEBUG][0m - greedy_zero_padding           : False[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - lazy                          : False[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - max_length                    : 2048[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - pad_to_max_length             : False[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - pad_to_multiple_of            : None[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - save_generation_output        : False[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - src_length                    : 1024[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - task_name                     : None[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - use_pose_convert              : False[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - zero_padding                  : False[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - [0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m -    Generation Configuration Arguments   [0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - paddle commit id              : a842a0f40f6111fb0c2df218130d0560aa747bc8[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - paddlenlp commit id           : 418c3a511dcfa20eccba40f65cb59543c2040e43[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - top_k                         : 1[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - top_p                         : 1.0[0m
+[35m[2024-12-30 09:32:02,370] [   DEBUG][0m - [0m
+[32m[2024-12-30 09:32:02,371] [    INFO][0m - The global seed is set to 42, local seed is set to 45 and random seed is set to 42.[0m
+[33m[2024-12-30 09:32:02,371] [ WARNING][0m - Process rank: 1, device: gpu, world_size: 2, distributed training: True, 16-bits training: True[0m
+[32m[2024-12-30 09:32:02,373] [    INFO][0m - Final model config: LlamaConfig {
+  "alibi": false,
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "bos_token_id": 1,
+  "dtype": "float16",
+  "eos_token_id": 2,
+  "hidden_size": 768,
+  "immediate_clear_past_key_value": false,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "long_sequence_init_args": {},
+  "long_sequence_strategy_name": null,
+  "long_sequence_strategy_type": null,
+  "max_position_embeddings": 2048,
+  "model_type": "llama",
+  "num_attention_heads": 8,
+  "num_hidden_layers": 2,
+  "num_key_value_heads": 8,
+  "pad_token_id": 0,
+  "paddlenlp_version": "3.0.0b3",
+  "recompute": true,
+  "refined_recompute": {},
+  "rms_norm_eps": 1e-06,
+  "rope_scaling_factor": 1.0,
+  "rope_scaling_type": null,
+  "rope_theta": 10000.0,
+  "seq_length": 2048,
+  "tensor_parallel_degree": 2,
+  "tensor_parallel_output": false,
+  "tensor_parallel_rank": 1,
+  "tie_word_embeddings": false,
+  "use_fast_layer_norm": false,
+  "use_flash_attention": true,
+  "use_flash_attention_for_generation": false,
+  "use_last_token_for_generation": false,
+  "use_long_sequence_strategies": false,
+  "vocab_size": 32000
+}
+[0m
+[32m[2024-12-30 09:32:02,373] [    INFO][0m - We are using <class 'paddlenlp.transformers.llama.modeling.LlamaForCausalLM'> to load '__internal_testing__/tiny-random-llama'.[0m
+[32m[2024-12-30 09:32:02,374] [    INFO][0m - Loading weights file from cache at /home/sjx/.paddlenlp/models/__internal_testing__/tiny-random-llama/model_state.pdparams[0m
+[32m[2024-12-30 09:32:02,582] [    INFO][0m - Starting to convert orignal state_dict to tensor parallel state_dict.[0m
+[32m[2024-12-30 09:32:02,708] [    INFO][0m - Loaded weights file from disk, setting weights to model.[0m
+[32m[2024-12-30 09:32:03,246] [    INFO][0m - All model checkpoint weights were used when initializing LlamaForCausalLM.
+[0m
+[32m[2024-12-30 09:32:03,246] [    INFO][0m - All the weights of LlamaForCausalLM were initialized from the model checkpoint at __internal_testing__/tiny-random-llama.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.[0m
+[32m[2024-12-30 09:32:03,287] [    INFO][0m - Generation config file not found, using a generation config created from the model config.[0m
+[32m[2024-12-30 09:32:03,290] [    INFO][0m - We are using <class 'paddlenlp.transformers.llama.tokenizer.LlamaTokenizer'> to load '__internal_testing__/tiny-random-llama'.[0m
+[32m[2024-12-30 09:32:03,298] [    INFO][0m - tokenizer config file saved in /home/sjx/.paddlenlp/models/__internal_testing__/tiny-random-llama/tokenizer_config.json[0m
+[32m[2024-12-30 09:32:03,298] [    INFO][0m - Special tokens file saved in /home/sjx/.paddlenlp/models/__internal_testing__/tiny-random-llama/special_tokens_map.json[0m
+[35m[2024-12-30 09:32:04,596] [   DEBUG][0m - 1: waiting for the main local process to perform work[0m
+[32m[2024-12-30 09:32:05,658] [    INFO][0m - The global seed is set to 42, local seed is set to 45 and random seed is set to 42.[0m
+[32m[2024-12-30 09:32:05,918] [    INFO][0m - max_steps is given, it will override any value given in num_train_epochs[0m
+[32m[2024-12-30 09:32:05,918] [    INFO][0m - Using half precision[0m
+[35m[2024-12-30 09:32:05,924] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 09:32:05,924] [   DEBUG][0m -     Training Configuration Arguments    [0m
+[35m[2024-12-30 09:32:05,924] [   DEBUG][0m - paddle commit id              : a842a0f40f6111fb0c2df218130d0560aa747bc8[0m
+[35m[2024-12-30 09:32:05,924] [   DEBUG][0m - paddlenlp commit id           : 418c3a511dcfa20eccba40f65cb59543c2040e43[0m
+[35m[2024-12-30 09:32:05,924] [   DEBUG][0m - _no_sync_in_gradient_accumulation: True[0m
+[35m[2024-12-30 09:32:05,924] [   DEBUG][0m - adam_beta1                    : 0.9[0m
+[35m[2024-12-30 09:32:05,924] [   DEBUG][0m - adam_beta2                    : 0.999[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - adam_epsilon                  : 1e-08[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - amp_custom_black_list         : None[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - amp_custom_white_list         : None[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - amp_master_grad               : False[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - auto_parallel_resume_form_hybrid_parallel: False[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - autotuner_benchmark           : False[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - benchmark                     : False[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - bf16                          : False[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - bf16_full_eval                : False[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - ckpt_quant_stage              : O1[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - context_parallel_degree       : 1[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - current_device                : gpu:1[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - data_parallel_config          : [0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - data_parallel_degree          : 1[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - data_parallel_rank            : 0[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - dataloader_drop_last          : False[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - dataloader_num_workers        : 0[0m
+[35m[2024-12-30 09:32:05,925] [   DEBUG][0m - dataset_batch_size            : 1000[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - dataset_kwargs                : {}[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - dataset_num_proc              : None[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - dataset_rank                  : 0[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - dataset_text_field            : text[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - dataset_world_size            : 1[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - ddp_find_unused_parameters    : None[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - decay_steps                   : 0[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - device                        : gpu[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - disable_tqdm                  : True[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - distributed_dataloader        : False[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - do_eval                       : True[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - do_export                     : False[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - do_predict                    : False[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - do_train                      : True[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - enable_auto_parallel          : False[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - eval_accumulation_steps       : 16[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - eval_batch_size               : 8[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - eval_packing                  : None[0m
+[35m[2024-12-30 09:32:05,926] [   DEBUG][0m - eval_steps                    : 1[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - evaluation_strategy           : IntervalStrategy.STEPS[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - expert_max_capacity           : 4294967296[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - expert_min_capacity           : 1[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - flatten_param_grads           : False[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - force_reshard_pp              : False[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - fp16                          : True[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - fp16_full_eval                : False[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - fp16_opt_level                : O2[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - fuse_sequence_parallel_allreduce: False[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - gradient_accumulation_steps   : 4[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - greater_is_better             : True[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - hybrid_parallel_topo_order    : pp_first[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - ignore_data_skip              : False[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - ignore_load_lr_and_optim      : False[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - ignore_save_lr_and_optim      : False[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - label_names                   : None[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - lazy_data_processing          : True[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - learning_rate                 : 3e-05[0m
+[35m[2024-12-30 09:32:05,927] [   DEBUG][0m - load_best_model_at_end        : True[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - load_sharded_model            : False[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - local_process_index           : 1[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - local_rank                    : 1[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - log_level                     : -1[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - log_level_replica             : -1[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - log_on_each_node              : True[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - logging_dir                   : /tmp/tmpwk1l7efe/runs/Dec30_09-31-58_ubuntu[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - logging_first_step            : False[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - logging_steps                 : 1[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - logging_strategy              : IntervalStrategy.STEPS[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - logical_process_index         : 1[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - lr_end                        : 1e-07[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - lr_scheduler_type             : SchedulerType.LINEAR[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - max_evaluate_steps            : -1[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - max_grad_norm                 : 1.0[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - max_seq_length                : 2048[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - max_steps                     : 1[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - metric_for_best_model         : accuracy[0m
+[35m[2024-12-30 09:32:05,928] [   DEBUG][0m - minimum_eval_times            : None[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - model_init_kwargs             : None[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - no_cuda                       : False[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - no_recompute_layers           : None[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - num_cycles                    : 0.5[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - num_train_epochs              : 3.0[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - offload_optim                 : False[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - optim                         : OptimizerNames.ADAMW[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - optimizer_name_suffix         : tp01[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - ordered_save_group_size       : 0[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - output_dir                    : /tmp/tmpwk1l7efe[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - output_signal_dir             : /tmp/tmpwk1l7efe[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - overwrite_output_dir          : False[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - past_index                    : -1[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - per_device_eval_batch_size    : 8[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - per_device_train_batch_size   : 4[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - pipeline_parallel_config      : [0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - pipeline_parallel_degree      : 1[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - pipeline_parallel_rank        : 0[0m
+[35m[2024-12-30 09:32:05,929] [   DEBUG][0m - power                         : 1.0[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - pp_recompute_interval         : 1[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - prediction_loss_only          : False[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - process_index                 : 1[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - recompute                     : True[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - recompute_granularity         : full[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - recompute_use_reentrant       : False[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - refined_recompute             : [0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - release_grads                 : False[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - remove_unused_columns         : True[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - report_to                     : ['visualdl'][0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - resume_from_checkpoint        : None[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - run_name                      : /tmp/tmpwk1l7efe[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - save_on_each_node             : False[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - save_sharded_model            : False[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - save_steps                    : 1[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - save_strategy                 : IntervalStrategy.STEPS[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - save_total_limit              : None[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - scale_loss                    : 32768[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - seed                          : 42[0m
+[35m[2024-12-30 09:32:05,930] [   DEBUG][0m - sep_parallel_degree           : 1[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - sequence_parallel             : False[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - sequence_parallel_config      : [0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - sharding                      : [][0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - sharding_comm_buffer_size_MB  : -1[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - sharding_degree               : -1[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - sharding_parallel_config      : [0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - sharding_parallel_degree      : 1[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - sharding_parallel_mesh_dimension: dp[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - sharding_parallel_rank        : 0[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - should_load_dataset           : True[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - should_load_sharding_stage1_model: False[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - should_log                    : False[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - should_save                   : False[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - should_save_model_state       : True[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - should_save_sharding_stage1_model: False[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - skip_data_intervals           : None[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - skip_memory_metrics           : True[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - skip_profile_timer            : True[0m
+[35m[2024-12-30 09:32:05,931] [   DEBUG][0m - skip_recompute_ops            : None[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - tensor_parallel_config        : [0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - tensor_parallel_degree        : 2[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - tensor_parallel_output        : False[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - tensor_parallel_rank          : 1[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - to_static                     : False[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - train_batch_size              : 4[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - unified_checkpoint            : True[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - unified_checkpoint_config     : ['async_save', 'remove_master_weight'][0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - use_async_save                : False[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - use_expert_parallel           : False[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - use_flash_attention           : True[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - use_fused_dropout_add         : False[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - use_fused_linear              : False[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - use_fused_rms_norm            : False[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - use_fused_rope                : False[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - use_hybrid_parallel           : True[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - virtual_pp_degree             : 1[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - wandb_api_key                 : None[0m
+[35m[2024-12-30 09:32:05,932] [   DEBUG][0m - warmup_ratio                  : 0.0[0m
+[35m[2024-12-30 09:32:05,933] [   DEBUG][0m - warmup_steps                  : 30[0m
+[35m[2024-12-30 09:32:05,933] [   DEBUG][0m - weight_decay                  : 0.0[0m
+[35m[2024-12-30 09:32:05,933] [   DEBUG][0m - weight_name_suffix            : tp01[0m
+[35m[2024-12-30 09:32:05,933] [   DEBUG][0m - world_size                    : 2[0m
+[35m[2024-12-30 09:32:05,933] [   DEBUG][0m - [0m
+[32m[2024-12-30 09:32:05,933] [    INFO][0m - Starting training from resume_from_checkpoint : None[0m
+[2024-12-30 09:32:05,939] [    INFO] tensor_parallel.py:33 - start broadcast mp parameters
+[2024-12-30 09:32:06,222] [    INFO] tensor_parallel.py:48 - mp's parameters is ready
+[2024-12-30 09:32:06,222] [ WARNING] hybrid_parallel_optimizer.py:292 - While using ClipGradByGlobalNorm in TensorParallel, PipelineParallel or Sharding, the grad clip of original optimizer will be changed.
+[32m[2024-12-30 09:32:06,226] [    INFO][0m - [timelog] checkpoint loading time: 0.00s (2024-12-30 09:32:06) [0m
+[32m[2024-12-30 09:32:06,226] [    INFO][0m - ***** Running training *****[0m
+[32m[2024-12-30 09:32:06,226] [    INFO][0m -   Num examples = 20[0m
+[32m[2024-12-30 09:32:06,226] [    INFO][0m -   Num Epochs = 1[0m
+[32m[2024-12-30 09:32:06,226] [    INFO][0m -   Instantaneous batch size per device = 4[0m
+[32m[2024-12-30 09:32:06,226] [    INFO][0m -   Total train batch size (w. parallel, distributed & accumulation) = 16[0m
+[32m[2024-12-30 09:32:06,226] [    INFO][0m -   Gradient Accumulation steps = 4[0m
+[32m[2024-12-30 09:32:06,226] [    INFO][0m -   Total optimization steps = 1[0m
+[32m[2024-12-30 09:32:06,226] [    INFO][0m -   Total num train samples = 16[0m
+[35m[2024-12-30 09:32:06,227] [   DEBUG][0m -   Number of trainable parameters = 52,301,568 (per device)[0m
+[35m[2024-12-30 09:32:06,231] [   DEBUG][0m -   Number of trainable parameters = 104,603,136 (all devices, roughly)[0m
+W1230 09:32:07.211661 3949863 multiply_fwd_func.cc:75] got different data type, run type promotion automatically, this may cause data type been changed.
+Traceback (most recent call last):
+  File "/home/sjx/tr-paddle-1230/llm/run_finetune.py", line 678, in <module>
+    main()
+  File "/home/sjx/tr-paddle-1230/llm/run_finetune.py", line 420, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/trainer/trainer.py", line 872, in train
+    return self._inner_training_loop(
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/trainer/trainer.py", line 1105, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/trainer/trainer.py", line 2306, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/trainer/trainer.py", line 2248, in compute_loss
+    outputs = model(**inputs)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/nn/layer/layers.py", line 1426, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/distributed/fleet/meta_parallel/meta_parallel_base.py", line 37, in forward
+    output = self._layers(*inputs, **kwargs)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/nn/layer/layers.py", line 1426, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/llama/modeling.py", line 2098, in forward
+    outputs = self.llama(
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/nn/layer/layers.py", line 1426, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/llama/modeling.py", line 1776, in forward
+    layer_outputs = self.recompute_training_full(
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/llama/modeling.py", line 1627, in recompute_training_full
+    hidden_states = recompute(
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/refined_recompute.py", line 453, in recompute
+    return _recompute_without_reentrant(function, preserve, *args, **kwargs)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/refined_recompute.py", line 422, in _recompute_without_reentrant
+    outputs = function(*args, **kwargs)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/llama/modeling.py", line 1623, in custom_forward
+    return module(*inputs)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/nn/layer/layers.py", line 1426, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/llama/modeling.py", line 1214, in forward
+    hidden_states = self.input_layernorm(hidden_states)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/nn/layer/layers.py", line 1426, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/llama/modeling.py", line 402, in forward
+    return hidden_states * self.weight
+OSError: (External) AttributeError: 'Tensor' object has no attribute '_unsafe_share_buffer_to'
+
+At:
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/refined_recompute.py(296): share_buffer_to_tensor_or_param
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/refined_recompute.py(347): pack
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/llama/modeling.py(402): forward
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/nn/layer/layers.py(1426): __call__
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/llama/modeling.py(1214): forward
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/nn/layer/layers.py(1426): __call__
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/llama/modeling.py(1623): custom_forward
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/refined_recompute.py(422): _recompute_without_reentrant
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/refined_recompute.py(453): recompute
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/llama/modeling.py(1627): recompute_training_full
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/llama/modeling.py(1776): forward
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/nn/layer/layers.py(1426): __call__
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/transformers/llama/modeling.py(2098): forward
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/nn/layer/layers.py(1426): __call__
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/distributed/fleet/meta_parallel/meta_parallel_base.py(37): forward
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/nn/layer/layers.py(1426): __call__
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/trainer/trainer.py(2248): compute_loss
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/trainer/trainer.py(2306): training_step
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/trainer/trainer.py(1105): _inner_training_loop
+  /home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddlenlp/trainer/trainer.py(872): train
+  /home/sjx/tr-paddle-1230/llm/run_finetune.py(420): main
+  /home/sjx/tr-paddle-1230/llm/run_finetune.py(678): <module>
+
+  [Hint: ret should not be null.] (at ../paddle/fluid/pybind/eager_utils.cc:2582)
+

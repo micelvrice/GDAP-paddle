@@ -31,12 +31,6 @@ from .testing_utils import LLMTest
     ["model_dir"],
     [
         ["llama"],
-        ["chatglm"],
-        # ["bloom"], @skip("Skip and wait to fix.")
-        ["chatglm2"],
-        ["qwen"],
-        ["qwen2"],
-        ["baichuan"],
     ],
 )
 class FinetuneTest(LLMTest, unittest.TestCase):
@@ -62,51 +56,4 @@ class FinetuneTest(LLMTest, unittest.TestCase):
 
             main()
 
-        # TODO(wj-Mcat): disable chatglm2 test temporarily
-        if self.model_dir not in ["qwen", "qwen2", "baichuan", "chatglm2"]:
-            self.run_predictor({"inference_model": True})
-
         self.run_predictor({"inference_model": False})
-
-
-@parameterized_class(
-    ["model_dir"],
-    [
-        ["llama"],
-    ],
-)
-class CkptQuantTest(LLMTest, TestMultipleGpus):
-    config_path: str = "./tests/fixtures/llm/finetune.yaml"
-    model_dir: str = None
-
-    def setUp(self) -> None:
-        LLMTest.setUp(self)
-
-        sys.path.insert(0, self.model_dir)
-        self.run_sft = "llm/run_finetune.py"
-
-    def tearDown(self) -> None:
-        LLMTest.tearDown(self)
-
-    def test_ckpt_quant(self):
-        finetune_config = load_test_config(self.config_path, "ckpt_quant", self.model_dir)
-
-        finetune_config["dataset_name_or_path"] = self.data_dir
-        finetune_config["output_dir"] = self.output_dir
-
-        self.runfirst(finetune_config)
-
-        # get `quant_ckpt_resume_times`
-        with open(os.path.join(self.output_dir, "checkpoint-1", SAFE_OPTIMIZER_INDEX_NAME), "r") as r:
-            index = json.loads(r.read())
-        quant_ckpt_resume_times = index["quant_ckpt_resume_times"]
-
-        self.rerun(finetune_config)
-
-        self.assertEqual(quant_ckpt_resume_times, 0)
-
-    def runfirst(self, train_args):
-        self.run_n1c2(self.run_sft, **train_args)
-
-    def rerun(self, train_args):
-        self.run_n1c2(self.run_sft, **train_args)

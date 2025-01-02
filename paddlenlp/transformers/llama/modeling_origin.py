@@ -75,6 +75,7 @@ from paddlenlp.transformers.model_outputs import (
 from paddlenlp.transformers.model_utils import PretrainedModel, register_base_model
 from paddlenlp.utils.log import logger
 from paddlenlp.utils.tools import get_env_device
+
 from .. import linear_utils
 from ..linear_utils import Linear
 from ..segment_parallel_utils import ReshardLayer
@@ -95,10 +96,9 @@ try:
 except:
     flash_attention = None
 from . import fusion_ops
-from utils import get_important_token_indices
+
 rms_norm_fused = fusion_ops.rms_norm_fused
-GROUP_SIZE = 4
-REDUCTION_RATIO = {"max": 0.8, "min": 0.5}
+
 __all__ = [
     "LlamaModel",
     "LlamaPretrainedModel",
@@ -1756,57 +1756,12 @@ class LlamaModel(LlamaPretrainedModel):
             else:
                 attention_mask = None if attention_mask is None else attention_mask.astype("bool")
         hidden_states = inputs_embeds
-        orig_seq_len = hidden_states.shape[1]
         # decoder layers
         all_hidden_states = () if output_hidden_states else None
         all_self_attns = () if output_attentions else None
         next_decoder_cache = () if use_cache else None
-        
-        remove_token_states = None
-        remove_token_indices_list = []
-        keep_token_indices_list = list(range(orig_seq_len))
+
         for idx, (decoder_layer) in enumerate(self.layers):
-            if idx % GROUP_SIZE == 0:
-                group_attention_weights = all_self_attns
-                all_self_attns = () if output_attentions else None # 用完就重置为空，不存储所有的attn_weights，减少显存占用
-                token_reduction_mask = get_important_token_indices(group_attention_weights)
-
-                # keep, remove = paddle.where(token_reduction_mask)[1].tolist(), paddle.where(~token_reduction_mask)[1].tolist()
-
-                # remove_token_indices_list.extend(np.array(keep_token_indices_list)[remove].tolist())
-                # keep_token_indices_list = np.delete(np.array(keep_token_indices_list), remove).tolist()
-
-                # all_indices = paddle.concat([paddle.to_tensor(keep), paddle.to_tensor(remove)], axis=0)
-
-                keep_indices = paddle.where(token_reduction_mask)[1].squeeze().tolist()
-                remove_indices = paddle.where(~token_reduction_mask)[1].squeeze().tolist()
-
-                remove_set = set(remove_indices)
-
-                remove_element = [keep_token_indices_list[i] for i in remove_indices]
-                remove_token_indices_list.extend(remove_element)
-
-                keep_token_indices_list = [
-                    elem for idx, elem in enumerate(keep_token_indices_list) if idx not in remove_set
-                ]
-
-                all_indices = paddle.concat([
-                    paddle.to_tensor(keep_indices, dtype='int64'),
-                    paddle.to_tensor(remove_indices, dtype='int64')
-                ], axis=0)
-
-                combined_hidden_states = hidden_states.index_select(all_indices, axis=1)
-                keep_part = combined_hidden_states[:,:len(keep_indices)]
-                remove_part = combined_hidden_states[:, len(keep_indices):]
-
-                hidden_states = keep_part
-
-            if remove_token_states is None:
-                remove_token_states = remove_part
-            else:
-                remove_token_states = paddle.concat((remove_token_states, remove_part), axis=1)
-
-
             if output_hidden_states:
                 all_hidden_states += (hidden_states,)
             past_key_value = past_key_values[idx] if past_key_values is not None else None
@@ -1854,25 +1809,11 @@ class LlamaModel(LlamaPretrainedModel):
 
             if use_cache:
                 next_decoder_cache += (layer_outputs[2 if output_attentions else 1],)
-        if len(remove_token_indices_list) != remove_token_states.shape[1]:
-            raise ValueError("The length of removed_token_indices_list and remove_token_states must be the same.")
-
-        if hidden_states.shape[1] + remove_token_states.shape[1] != orig_seq_len:
-            raise ValueError("The sum of hidden_states and remove_token_states lengths must equal orig_seq_len.")
-
-        if len(remove_token_indices_list) + len(keep_token_indices_list) != orig_seq_len:
-            raise ValueError("The sum of removed_token_indices_list and keep_token_indices_list lengths must equal orig_seq_len.")
-
-        hidden_states = hidden_states.squeeze(0)
-
-        recover_hidden_states = paddle.zeros([orig_seq_len, hidden_states.shape[-1]]).to(hidden_states.place)
-        recover_hidden_states.scatter_(paddle.to_tensor(remove_token_indices_list), remove_token_states.squeeze(0))
-        recover_hidden_states.scatter_(paddle.to_tensor(keep_token_indices_list), hidden_states)
 
         if self.config.use_last_token_for_generation:
             hidden_states = paddle.unsqueeze(hidden_states[:, -1, :], 1)
 
-        hidden_states = self.norm(hidden_states.unsqueeze(0))
+        hidden_states = self.norm(hidden_states)
 
         # add hidden states from the last decoder layer
         if output_hidden_states:

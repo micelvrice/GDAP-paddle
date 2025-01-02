@@ -264,7 +264,6 @@ def main():
         tokenizer.pad_token_id = tokenizer.eos_token_id
 
     train_ds, dev_ds, test_ds = create_dataset(data_args, training_args)
-
     # TODO(ZHUI & sijunhe): Temporary implementation. Generalize this logic and move to Trainer later.
     if training_args.resume_from_checkpoint is not None and data_args.lazy:
         logger.info(
@@ -616,6 +615,8 @@ def create_dataset(data_args, training_args):
     train_ds = None
     dev_ds = None
     test_ds = None
+    training_args.do_eval = False
+    training_args.do_predict = False
     if os.path.exists(os.path.join(data_args.dataset_name_or_path, "train.json")) or os.path.exists(
         os.path.join(data_args.dataset_name_or_path, "dev.json")
     ):

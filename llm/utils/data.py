@@ -72,17 +72,18 @@ class DataFormatError(ValueError):
 
 
 def tokenize_unsupervised_example(tokenizer, example, data_args, is_test=True, zero_padding=False, flash_mask=False):
-    if "src" in example:
-        source = example["src"][0] if isinstance(example["src"], list) else example["src"]
+    if "text" in example:
+        source = example["text"][0] if isinstance(example["text"], list) else example["text"]
     else:
         raise DataFormatError(
             f"Example format is wrong, please check: {example} or rewrite tokenize_example in data.py "
         )
     tokenized_source = tokenizer(
         source,
-        truncation=False,
-        padding=True,
-        max_length=data_args.scaled_max_length,
+        truncation=True,
+        truncation_side="left",
+        padding='max_length',
+        max_length=data_args.max_length,
         add_special_tokens=True,
     )
 

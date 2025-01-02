@@ -1,0 +1,489 @@
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:686: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/_distutils_hack/__init__.py:31: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+[2024-12-30 11:14:19,952] [    INFO] distributed_strategy.py:333 - distributed strategy initialized
+======================= Modified FLAGS detected =======================
+FLAGS(name='FLAGS_selected_gpus', current_value='5', default_value='')
+FLAGS(name='FLAGS_nvidia_package_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia', default_value='')
+FLAGS(name='FLAGS_cusparse_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusparse/lib', default_value='')
+FLAGS(name='FLAGS_cudnn_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cudnn/lib', default_value='')
+FLAGS(name='FLAGS_enable_pir_in_executor', current_value=True, default_value=False)
+FLAGS(name='FLAGS_cublas_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cublas/lib', default_value='')
+FLAGS(name='FLAGS_nccl_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/nccl/lib', default_value='')
+FLAGS(name='FLAGS_cusolver_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusolver/lib', default_value='')
+FLAGS(name='FLAGS_curand_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/curand/lib', default_value='')
+FLAGS(name='FLAGS_cupti_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cuda_cupti/lib', default_value='')
+=======================================================================
+I1230 11:14:19.953205 4019298 tcp_utils.cc:130] Successfully connected to 10.3.242.26:48565
+I1230 11:14:20.027426 4019298 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:14:20.027459 4019298 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:14:20,027] [    INFO] topology.py:370 - Total 8 pipe comm group(s) create successfully!
+W1230 11:14:20.032020 4019298 gpu_resources.cc:119] Please NOTE: device: 5, GPU Compute Capability: 8.0, Driver API Version: 12.2, Runtime API Version: 11.7
+W1230 11:14:20.038410 4019298 gpu_resources.cc:164] device: 5, cuDNN Version: 8.9.
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:686: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/_distutils_hack/__init__.py:31: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+[2024-12-30 11:19:32,055] [    INFO] distributed_strategy.py:333 - distributed strategy initialized
+======================= Modified FLAGS detected =======================
+FLAGS(name='FLAGS_cupti_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cuda_cupti/lib', default_value='')
+FLAGS(name='FLAGS_cusolver_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusolver/lib', default_value='')
+FLAGS(name='FLAGS_nccl_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/nccl/lib', default_value='')
+FLAGS(name='FLAGS_selected_gpus', current_value='5', default_value='')
+FLAGS(name='FLAGS_cublas_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cublas/lib', default_value='')
+FLAGS(name='FLAGS_curand_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/curand/lib', default_value='')
+FLAGS(name='FLAGS_cusparse_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusparse/lib', default_value='')
+FLAGS(name='FLAGS_nvidia_package_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia', default_value='')
+FLAGS(name='FLAGS_enable_pir_in_executor', current_value=True, default_value=False)
+FLAGS(name='FLAGS_cudnn_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cudnn/lib', default_value='')
+=======================================================================
+I1230 11:19:32.056842 4023004 tcp_utils.cc:130] Successfully connected to 10.3.242.26:38255
+I1230 11:19:32.057394 4023004 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:19:32.057415 4023004 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:19:32,057] [    INFO] topology.py:370 - Total 8 pipe comm group(s) create successfully!
+W1230 11:19:32.060082 4023004 gpu_resources.cc:119] Please NOTE: device: 5, GPU Compute Capability: 8.0, Driver API Version: 12.2, Runtime API Version: 11.7
+W1230 11:19:32.065826 4023004 gpu_resources.cc:164] device: 5, cuDNN Version: 8.9.
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/distributed/communication/group.py:128: UserWarning: Current global rank 5 is not in group _default_pg15
+  warnings.warn(
+[2024-12-30 11:19:38,334] [    INFO] topology.py:370 - Total 8 data comm group(s) create successfully!
+[2024-12-30 11:19:38,334] [    INFO] topology.py:370 - Total 8 model comm group(s) create successfully!
+I1230 11:19:38.334615 4023004 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:19:38.334633 4023004 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:19:38,334] [    INFO] topology.py:370 - Total 1 sharding comm group(s) create successfully!
+I1230 11:19:38.334700 4023004 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:19:38.334704 4023004 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:19:38,334] [    INFO] topology.py:290 - HybridParallelInfo: rank_id: 5, mp_degree: 1, sharding_degree: 8, pp_degree: 1, dp_degree: 1, sep_degree: 1, mp_group: [5],  sharding_group: [0, 1, 2, 3, 4, 5, 6, 7], pp_group: [5], dp_group: [5], sep:group: None, check/clip group: [0, 1, 2, 3, 4, 5, 6, 7]
+[32m[2024-12-30 11:19:38,334] [    INFO][0m -     +==============================================================================+
+    |                                                                              |
+    |                         DistributedStrategy Overview                         |
+    |                                                                              |
+    +==============================================================================+
+    |                        a_sync=True <-> a_sync_configs                        |
+    +------------------------------------------------------------------------------+
+    |                               k_steps                    -1                  |
+    |                     max_merge_var_num                    1                   |
+    |                       send_queue_size                    16                  |
+    |               independent_recv_thread                  False                 |
+    |         min_send_grad_num_before_recv                    1                   |
+    |                      thread_pool_size                    1                   |
+    |                       send_wait_times                    1                   |
+    |               runtime_split_send_recv                  False                 |
+    |                        launch_barrier                   True                 |
+    |             heter_worker_device_guard                   cpu                  |
+    |                        lr_decay_steps                    10                  |
+    |                            use_ps_gpu                    0                   |
+    |                         use_gpu_graph                    0                   |
+    +==============================================================================+
+    |                    Environment Flags, Communication Flags                    |
+    +------------------------------------------------------------------------------+
+    |                                  mode                    1                   |
+    |                               elastic                  False                 |
+    |                                  auto                  False                 |
+    |                   sync_nccl_allreduce                   True                 |
+    |                         nccl_comm_num                    1                   |
+    |            use_hierarchical_allreduce                  False                 |
+    |   hierarchical_allreduce_inter_nranks                    1                   |
+    |                       sync_batch_norm                  False                 |
+    |                   fuse_all_reduce_ops                   True                 |
+    |                  fuse_grad_size_in_MB                    32                  |
+    |              fuse_grad_size_in_TFLOPS                   50.0                 |
+    |               cudnn_exhaustive_search                  False                 |
+    |             conv_workspace_size_limit                   512                  |
+    |    cudnn_batchnorm_spatial_persistent                  False                 |
+    |                        fp16_allreduce                  False                 |
+    |               last_comm_group_size_MB                   1.0                  |
+    |                find_unused_parameters                  False                 |
+    |            without_graph_optimization                   True                 |
+    |                 fuse_grad_size_in_num                    8                   |
+    |                 calc_comm_same_stream                  False                 |
+    |                                   asp                  False                 |
+    |                       fuse_grad_merge                  False                 |
+    |                             semi_auto                  False                 |
+    |                            adam_d2sum                  False                 |
+    |                           auto_search                  False                 |
+    |                        heter_ccl_mode                  False                 |
+    |                         is_fl_ps_mode                  False                 |
+    |                      with_coordinator                  False                 |
+    |                            split_data                   True                 |
+    |                  downpour_table_param                    []                  |
+    |                       fs_client_param                                        |
+    +==============================================================================+
+    |                                Build Strategy                                |
+    +------------------------------------------------------------------------------+
+    |              fuse_elewise_add_act_ops                  False                 |
+    |                       fuse_bn_act_ops                  False                 |
+    |              fuse_relu_depthwise_conv                  False                 |
+    |                    fuse_broadcast_ops                  False                 |
+    |                fuse_all_optimizer_ops                  False                 |
+    |                        enable_inplace                  False                 |
+    |     enable_backward_optimizer_op_deps                   True                 |
+    |                 cache_runtime_context                  False                 |
+    |                   fuse_bn_add_act_ops                   True                 |
+    |                    enable_auto_fusion                  False                 |
+    |                          enable_addto                  False                 |
+    |              allow_cuda_graph_capture                  False                 |
+    |                       reduce_strategy                    0                   |
+    |                    fuse_gemm_epilogue                  False                 |
+    |                   debug_graphviz_path                                        |
+    |                       fused_attention                  False                 |
+    |                     fused_feedforward                  False                 |
+    |            fuse_dot_product_attention                  False                 |
+    |                          fuse_resunit                  False                 |
+    +==============================================================================+
+[0m
+[32m[2024-12-30 11:19:38,335] [    INFO][0m - The default value for the training argument `--report_to` will change in v5 (from all installed integrations to none). In v5, you will need to use `--report_to all` to get the same behavior as now. You should start updating your code and make this info disappear :-).[0m
+[35m[2024-12-30 11:19:38,335] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 11:19:38,335] [   DEBUG][0m -      Model Configuration Arguments      [0m
+[35m[2024-12-30 11:19:38,335] [   DEBUG][0m - paddle commit id              : 396a3f594f154081b444a3ab40e7f28d89c32521[0m
+[35m[2024-12-30 11:19:38,335] [   DEBUG][0m - paddlenlp commit id           : 79695ccd747b5a6b18bdec65503aacd419ca9a46.dirty[0m
+[35m[2024-12-30 11:19:38,335] [   DEBUG][0m - aistudio_repo_id              : None[0m
+[35m[2024-12-30 11:19:38,335] [   DEBUG][0m - aistudio_repo_license         : Apache License 2.0[0m
+[35m[2024-12-30 11:19:38,335] [   DEBUG][0m - aistudio_repo_private         : True[0m
+[35m[2024-12-30 11:19:38,335] [   DEBUG][0m - aistudio_token                : None[0m
+[35m[2024-12-30 11:19:38,335] [   DEBUG][0m - attention_probs_dropout_prob  : 0.1[0m
+[35m[2024-12-30 11:19:38,335] [   DEBUG][0m - continue_training             : True[0m
+[35m[2024-12-30 11:19:38,335] [   DEBUG][0m - flash_mask                    : False[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - from_aistudio                 : False[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - fuse_attention_ffn            : None[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - fuse_attention_qkv            : None[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - hidden_dropout_prob           : 0.1[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - lokr                          : False[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - lokr_dim                      : 8[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - lokr_path                     : None[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - lora                          : True[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - lora_path                     : None[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - lora_plus_scale               : 1.0[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - lora_rank                     : 8[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - lora_use_mixer                : False[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - model_name_or_path            : meta-llama/Llama-2-7b[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - neftune                       : False[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - neftune_noise_alpha           : 5.0[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - num_prefix_tokens             : 128[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - pissa                         : False[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - prefix_path                   : None[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - prefix_tuning                 : False[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - reft                          : False[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - rope_scaling_factor           : 1.0[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - rslora                        : False[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - save_to_aistudio              : False[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - strategy_name                 : None[0m
+[35m[2024-12-30 11:19:38,336] [   DEBUG][0m - strategy_type                 : None[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - tokenizer_name_or_path        : None[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - use_fast_layer_norm           : False[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - use_long_sequence_strategies  : False[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - use_mora                      : False[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - use_quick_lora                : False[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - vera                          : False[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - vera_rank                     : 8[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - weight_blocksize              : 64[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - weight_double_quant           : False[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - weight_double_quant_block_size: 256[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - weight_quantize_algo          : None[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - [0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m -       Data Configuration Arguments      [0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - paddle commit id              : 396a3f594f154081b444a3ab40e7f28d89c32521[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - paddlenlp commit id           : 79695ccd747b5a6b18bdec65503aacd419ca9a46.dirty[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - autoregressive                : True[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - chat_template                 : None[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - dataset_name_or_path          : /home/sjx/tr-paddle-1230/train_data[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - eval_with_do_generation       : False[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - greedy_zero_padding           : False[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - lazy                          : False[0m
+[35m[2024-12-30 11:19:38,337] [   DEBUG][0m - max_length                    : 8192[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - pad_to_max_length             : False[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - pad_to_multiple_of            : None[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - save_generation_output        : False[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - src_length                    : 4096[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - task_name                     : None[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - use_pose_convert              : False[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - zero_padding                  : False[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - [0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m -    Generation Configuration Arguments   [0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - paddle commit id              : 396a3f594f154081b444a3ab40e7f28d89c32521[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - paddlenlp commit id           : 79695ccd747b5a6b18bdec65503aacd419ca9a46.dirty[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - top_k                         : 1[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - top_p                         : 1.0[0m
+[35m[2024-12-30 11:19:38,338] [   DEBUG][0m - [0m
+[32m[2024-12-30 11:19:38,339] [    INFO][0m - The global seed is set to 47, local seed is set to 55 and random seed is set to 42.[0m
+[33m[2024-12-30 11:19:38,339] [ WARNING][0m - Process rank: 5, device: gpu, world_size: 8, distributed training: True, 16-bits training: True[0m
+[32m[2024-12-30 11:19:38,340] [    INFO][0m - Loading configuration file /home/sjx/.paddlenlp/models/meta-llama/Llama-2-7b/config.json[0m
+[32m[2024-12-30 11:19:38,341] [    INFO][0m - Final model config: LlamaConfig {
+  "alibi": false,
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "bos_token_id": 1,
+  "dpo_config": null,
+  "dtype": "bfloat16",
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "immediate_clear_past_key_value": false,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "long_sequence_init_args": {},
+  "long_sequence_strategy_name": null,
+  "long_sequence_strategy_type": null,
+  "max_position_embeddings": 4096,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 32,
+  "pad_token_id": 0,
+  "paddlenlp_version": "3.0.0b3.post20241230",
+  "pretraining_tp": 1,
+  "recompute": true,
+  "refined_recompute": {},
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_scaling_factor": 2.0,
+  "rope_scaling_type": "linear",
+  "rope_theta": 10000.0,
+  "seq_length": 8192,
+  "tensor_parallel_output": false,
+  "tie_word_embeddings": false,
+  "use_fast_layer_norm": false,
+  "use_flash_attention": true,
+  "use_flash_attention_for_generation": false,
+  "use_last_token_for_generation": false,
+  "use_long_sequence_strategies": false,
+  "vocab_size": 32000
+}
+[0m
+[32m[2024-12-30 11:19:38,341] [    INFO][0m - We are using <class 'paddlenlp.transformers.llama.modeling.LlamaForCausalLM'> to load 'meta-llama/Llama-2-7b'.[0m
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:686: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/_distutils_hack/__init__.py:31: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+[2024-12-30 11:26:13,461] [    INFO] distributed_strategy.py:333 - distributed strategy initialized
+======================= Modified FLAGS detected =======================
+FLAGS(name='FLAGS_cusparse_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusparse/lib', default_value='')
+FLAGS(name='FLAGS_cudnn_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cudnn/lib', default_value='')
+FLAGS(name='FLAGS_enable_pir_in_executor', current_value=True, default_value=False)
+FLAGS(name='FLAGS_cupti_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cuda_cupti/lib', default_value='')
+FLAGS(name='FLAGS_curand_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/curand/lib', default_value='')
+FLAGS(name='FLAGS_cublas_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cublas/lib', default_value='')
+FLAGS(name='FLAGS_cusolver_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/cusolver/lib', default_value='')
+FLAGS(name='FLAGS_nccl_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia/nccl/lib', default_value='')
+FLAGS(name='FLAGS_nvidia_package_dir', current_value='/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/../nvidia', default_value='')
+FLAGS(name='FLAGS_selected_gpus', current_value='5', default_value='')
+=======================================================================
+I1230 11:26:13.463266 4028357 tcp_utils.cc:130] Successfully connected to 10.3.242.26:38214
+I1230 11:26:13.527447 4028357 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:26:13.527472 4028357 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:26:13,527] [    INFO] topology.py:370 - Total 8 pipe comm group(s) create successfully!
+W1230 11:26:13.531509 4028357 gpu_resources.cc:119] Please NOTE: device: 5, GPU Compute Capability: 8.0, Driver API Version: 12.2, Runtime API Version: 11.7
+W1230 11:26:13.532444 4028357 gpu_resources.cc:164] device: 5, cuDNN Version: 8.9.
+/home/sjx/anaconda3/envs/paddle_test/lib/python3.10/site-packages/paddle/distributed/communication/group.py:128: UserWarning: Current global rank 5 is not in group _default_pg15
+  warnings.warn(
+[2024-12-30 11:26:19,307] [    INFO] topology.py:370 - Total 8 data comm group(s) create successfully!
+[2024-12-30 11:26:19,307] [    INFO] topology.py:370 - Total 8 model comm group(s) create successfully!
+I1230 11:26:19.307981 4028357 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:26:19.308005 4028357 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:26:19,308] [    INFO] topology.py:370 - Total 1 sharding comm group(s) create successfully!
+I1230 11:26:19.308085 4028357 process_group_nccl.cc:150] ProcessGroupNCCL pg_timeout_ 1800000
+I1230 11:26:19.308089 4028357 process_group_nccl.cc:151] ProcessGroupNCCL nccl_comm_init_option_ 0
+[2024-12-30 11:26:19,308] [    INFO] topology.py:290 - HybridParallelInfo: rank_id: 5, mp_degree: 1, sharding_degree: 8, pp_degree: 1, dp_degree: 1, sep_degree: 1, mp_group: [5],  sharding_group: [0, 1, 2, 3, 4, 5, 6, 7], pp_group: [5], dp_group: [5], sep:group: None, check/clip group: [0, 1, 2, 3, 4, 5, 6, 7]
+[32m[2024-12-30 11:26:19,308] [    INFO][0m -     +==============================================================================+
+    |                                                                              |
+    |                         DistributedStrategy Overview                         |
+    |                                                                              |
+    +==============================================================================+
+    |                        a_sync=True <-> a_sync_configs                        |
+    +------------------------------------------------------------------------------+
+    |                               k_steps                    -1                  |
+    |                     max_merge_var_num                    1                   |
+    |                       send_queue_size                    16                  |
+    |               independent_recv_thread                  False                 |
+    |         min_send_grad_num_before_recv                    1                   |
+    |                      thread_pool_size                    1                   |
+    |                       send_wait_times                    1                   |
+    |               runtime_split_send_recv                  False                 |
+    |                        launch_barrier                   True                 |
+    |             heter_worker_device_guard                   cpu                  |
+    |                        lr_decay_steps                    10                  |
+    |                            use_ps_gpu                    0                   |
+    |                         use_gpu_graph                    0                   |
+    +==============================================================================+
+    |                    Environment Flags, Communication Flags                    |
+    +------------------------------------------------------------------------------+
+    |                                  mode                    1                   |
+    |                               elastic                  False                 |
+    |                                  auto                  False                 |
+    |                   sync_nccl_allreduce                   True                 |
+    |                         nccl_comm_num                    1                   |
+    |            use_hierarchical_allreduce                  False                 |
+    |   hierarchical_allreduce_inter_nranks                    1                   |
+    |                       sync_batch_norm                  False                 |
+    |                   fuse_all_reduce_ops                   True                 |
+    |                  fuse_grad_size_in_MB                    32                  |
+    |              fuse_grad_size_in_TFLOPS                   50.0                 |
+    |               cudnn_exhaustive_search                  False                 |
+    |             conv_workspace_size_limit                   512                  |
+    |    cudnn_batchnorm_spatial_persistent                  False                 |
+    |                        fp16_allreduce                  False                 |
+    |               last_comm_group_size_MB                   1.0                  |
+    |                find_unused_parameters                  False                 |
+    |            without_graph_optimization                   True                 |
+    |                 fuse_grad_size_in_num                    8                   |
+    |                 calc_comm_same_stream                  False                 |
+    |                                   asp                  False                 |
+    |                       fuse_grad_merge                  False                 |
+    |                             semi_auto                  False                 |
+    |                            adam_d2sum                  False                 |
+    |                           auto_search                  False                 |
+    |                        heter_ccl_mode                  False                 |
+    |                         is_fl_ps_mode                  False                 |
+    |                      with_coordinator                  False                 |
+    |                            split_data                   True                 |
+    |                  downpour_table_param                    []                  |
+    |                       fs_client_param                                        |
+    +==============================================================================+
+    |                                Build Strategy                                |
+    +------------------------------------------------------------------------------+
+    |              fuse_elewise_add_act_ops                  False                 |
+    |                       fuse_bn_act_ops                  False                 |
+    |              fuse_relu_depthwise_conv                  False                 |
+    |                    fuse_broadcast_ops                  False                 |
+    |                fuse_all_optimizer_ops                  False                 |
+    |                        enable_inplace                  False                 |
+    |     enable_backward_optimizer_op_deps                   True                 |
+    |                 cache_runtime_context                  False                 |
+    |                   fuse_bn_add_act_ops                   True                 |
+    |                    enable_auto_fusion                  False                 |
+    |                          enable_addto                  False                 |
+    |              allow_cuda_graph_capture                  False                 |
+    |                       reduce_strategy                    0                   |
+    |                    fuse_gemm_epilogue                  False                 |
+    |                   debug_graphviz_path                                        |
+    |                       fused_attention                  False                 |
+    |                     fused_feedforward                  False                 |
+    |            fuse_dot_product_attention                  False                 |
+    |                          fuse_resunit                  False                 |
+    +==============================================================================+
+[0m
+[32m[2024-12-30 11:26:19,308] [    INFO][0m - The default value for the training argument `--report_to` will change in v5 (from all installed integrations to none). In v5, you will need to use `--report_to all` to get the same behavior as now. You should start updating your code and make this info disappear :-).[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m -      Model Configuration Arguments      [0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - paddle commit id              : 396a3f594f154081b444a3ab40e7f28d89c32521[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - paddlenlp commit id           : 79695ccd747b5a6b18bdec65503aacd419ca9a46.dirty[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - aistudio_repo_id              : None[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - aistudio_repo_license         : Apache License 2.0[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - aistudio_repo_private         : True[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - aistudio_token                : None[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - attention_probs_dropout_prob  : 0.1[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - continue_training             : True[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - flash_mask                    : False[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - from_aistudio                 : False[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - fuse_attention_ffn            : None[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - fuse_attention_qkv            : None[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - hidden_dropout_prob           : 0.1[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - lokr                          : False[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - lokr_dim                      : 8[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - lokr_path                     : None[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - lora                          : True[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - lora_path                     : None[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - lora_plus_scale               : 1.0[0m
+[35m[2024-12-30 11:26:19,309] [   DEBUG][0m - lora_rank                     : 8[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - lora_use_mixer                : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - model_name_or_path            : meta-llama/Llama-2-7b[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - neftune                       : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - neftune_noise_alpha           : 5.0[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - num_prefix_tokens             : 128[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - pissa                         : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - prefix_path                   : None[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - prefix_tuning                 : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - reft                          : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - rope_scaling_factor           : 1.0[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - rslora                        : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - save_to_aistudio              : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - strategy_name                 : None[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - strategy_type                 : None[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - tokenizer_name_or_path        : None[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - use_fast_layer_norm           : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - use_long_sequence_strategies  : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - use_mora                      : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - use_quick_lora                : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - vera                          : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - vera_rank                     : 8[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - weight_blocksize              : 64[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - weight_double_quant           : False[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - weight_double_quant_block_size: 256[0m
+[35m[2024-12-30 11:26:19,310] [   DEBUG][0m - weight_quantize_algo          : None[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - [0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m -       Data Configuration Arguments      [0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - paddle commit id              : 396a3f594f154081b444a3ab40e7f28d89c32521[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - paddlenlp commit id           : 79695ccd747b5a6b18bdec65503aacd419ca9a46.dirty[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - autoregressive                : True[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - chat_template                 : None[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - dataset_name_or_path          : /home/sjx/tr-paddle-1230/train_data[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - eval_with_do_generation       : False[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - greedy_zero_padding           : False[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - lazy                          : False[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - max_length                    : 8192[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - pad_to_max_length             : False[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - pad_to_multiple_of            : None[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - save_generation_output        : False[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - src_length                    : 4096[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - task_name                     : None[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - use_pose_convert              : False[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - zero_padding                  : False[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - [0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m - ============================================================[0m
+[35m[2024-12-30 11:26:19,311] [   DEBUG][0m -    Generation Configuration Arguments   [0m
+[35m[2024-12-30 11:26:19,312] [   DEBUG][0m - paddle commit id              : 396a3f594f154081b444a3ab40e7f28d89c32521[0m
+[35m[2024-12-30 11:26:19,312] [   DEBUG][0m - paddlenlp commit id           : 79695ccd747b5a6b18bdec65503aacd419ca9a46.dirty[0m
+[35m[2024-12-30 11:26:19,312] [   DEBUG][0m - top_k                         : 1[0m
+[35m[2024-12-30 11:26:19,312] [   DEBUG][0m - top_p                         : 1.0[0m
+[35m[2024-12-30 11:26:19,312] [   DEBUG][0m - [0m
+[32m[2024-12-30 11:26:19,313] [    INFO][0m - The global seed is set to 47, local seed is set to 55 and random seed is set to 42.[0m
+[33m[2024-12-30 11:26:19,313] [ WARNING][0m - Process rank: 5, device: gpu, world_size: 8, distributed training: True, 16-bits training: True[0m
+[32m[2024-12-30 11:26:19,314] [    INFO][0m - Loading configuration file /home/sjx/.paddlenlp/models/meta-llama/Llama-2-7b/config.json[0m
+[32m[2024-12-30 11:26:19,315] [    INFO][0m - Final model config: LlamaConfig {
+  "alibi": false,
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "bos_token_id": 1,
+  "dpo_config": null,
+  "dtype": "bfloat16",
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "immediate_clear_past_key_value": false,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "long_sequence_init_args": {},
+  "long_sequence_strategy_name": null,
+  "long_sequence_strategy_type": null,
+  "max_position_embeddings": 4096,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 32,
+  "pad_token_id": 0,
+  "paddlenlp_version": "3.0.0b3.post20241230",
+  "pretraining_tp": 1,
+  "recompute": true,
+  "refined_recompute": {},
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_scaling_factor": 2.0,
+  "rope_scaling_type": "linear",
+  "rope_theta": 10000.0,
+  "seq_length": 8192,
+  "tensor_parallel_output": false,
+  "tie_word_embeddings": false,
+  "use_fast_layer_norm": false,
+  "use_flash_attention": true,
+  "use_flash_attention_for_generation": false,
+  "use_last_token_for_generation": false,
+  "use_long_sequence_strategies": false,
+  "vocab_size": 32000
+}
+[0m
+[32m[2024-12-30 11:26:19,316] [    INFO][0m - We are using <class 'paddlenlp.transformers.llama.modeling.LlamaForCausalLM'> to load 'meta-llama/Llama-2-7b'.[0m
